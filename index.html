@@ -94,10 +94,13 @@
 
     /* BAND */
     .band { background: var(--brown); color: #fff; padding: 72px 0; }
-    .band-inner { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr; gap: 40px; align-items: center; }
-    .band-quote { font-size: clamp(1rem,2vw,1.3rem); font-weight: 700; line-height: 1.45; }
+    .band-inner { display: flex; flex-direction: column; gap: 40px; }
+    .band-quote { font-size: clamp(.95rem,1.8vw,1.25rem); font-weight: 700; line-height: 1.6; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.12); }
     .band-quote em { font-style: normal; color: var(--brown2); }
-    .band-stat strong { display: block; font-size: 2.2rem; font-weight: 900; }
+    .band-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
+    .band-stat { padding: 0 32px 0 0; border-right: 1px solid rgba(255,255,255,.1); }
+    .band-stat:last-child { border-right: none; }
+    .band-stat strong { display: block; font-size: clamp(1.4rem,2.5vw,2.2rem); font-weight: 900; margin-bottom: 4px; }
     .band-stat span   { font-size: .76rem; opacity: .6; }
 
     /* PROBLEM */
@@ -259,8 +262,8 @@
 
     /* RESPONSIVE */
     @media (max-width: 1024px) {
-      .band-inner { grid-template-columns: 1fr 1fr 1fr; }
-      .band-quote { grid-column: 1/-1; }
+      .band-stats { grid-template-columns: repeat(2,1fr); gap: 24px; }
+      .band-stat { border-right: none; padding: 0; }
       .team-grid  { grid-template-columns: repeat(3,1fr); }
     }
     @media (max-width: 860px) {
@@ -353,10 +356,12 @@
     <div class="wrap">
       <div class="band-inner">
         <p class="band-quote">"Our mission: <em>sustainable packaging from recycled and renewable materials</em>, helping businesses reduce plastic waste while promoting a circular economy that benefits people, communities, and the environment."</p>
-        <div class="band-stat"><strong>40M+</strong><span>MSMEs in Nigeria</span></div>
-        <div class="band-stat"><strong>2.5M</strong><span>Tonnes plastic waste/yr</span></div>
-        <div class="band-stat"><strong>26%</strong><span>Of total env. pollution</span></div>
-        <div class="band-stat"><strong>₦960B</strong><span>Packaging spend/yr</span></div>
+        <div class="band-stats">
+          <div class="band-stat"><strong>40M+</strong><span>MSMEs in Nigeria</span></div>
+          <div class="band-stat"><strong>2.5M</strong><span>Tonnes plastic waste/yr</span></div>
+          <div class="band-stat"><strong>26%</strong><span>Of total env. pollution</span></div>
+          <div class="band-stat"><strong>₦960B</strong><span>Packaging spend/yr</span></div>
+        </div>
       </div>
     </div>
   </div>
