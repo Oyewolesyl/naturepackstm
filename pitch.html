@@ -165,6 +165,12 @@
     .tm-info h4 { font-size: .85rem; font-weight: 800; color: var(--brown); margin-bottom: 4px; }
     .tm-info span { font-size: .68rem; color: var(--green); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
 
+    /* BENEFITS GRID */
+    .benefit-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border-top: 1px solid rgba(90,62,39,.1); }
+    .benefit { padding: 28px 32px; border-right: 1px solid rgba(90,62,39,.1); border-bottom: 1px solid rgba(90,62,39,.1); font-size: .95rem; font-weight: 600; color: var(--brown); }
+    .benefit:nth-child(3n) { border-right: none; }
+    .benefit::before { content: '—'; display: block; color: var(--green); font-weight: 900; margin-bottom: 8px; }
+
     /* ASK */
     .ask-wrap { background: linear-gradient(135deg, var(--green2), var(--green)); padding: 96px 40px; color: #fff; }
     .ask-inner { max-width: 900px; margin-inline: auto; }
@@ -262,52 +268,75 @@
   <section class="section">
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow">The Problem</p>
-        <h2>Nigeria's packaging crisis has no middle ground.</h2>
+        <p class="eyebrow">The Packaging Problem We Can No Longer Ignore</p>
+        <h2>Plastic pollution and agricultural waste — two problems, one solution.</h2>
+        <p>Plastic packaging has become an essential part of modern commerce, but its environmental cost is becoming increasingly difficult to ignore. Millions of plastic bags and packaging materials are discarded every year, contributing to pollution in our communities, waterways, and ecosystems.</p>
       </div>
       <div class="prob-grid">
         <div class="prob-card">
           <p class="prob-num">01</p>
-          <h3>Reliant on Plastic</h3>
-          <p>Widely used plastic packaging tears easily, cannot handle weight or moisture, leading to significant product damage and losses for Nigerian MSMEs.</p>
+          <h3>Plastic Pollution</h3>
+          <p>Millions of plastic bags and packaging materials are discarded every year, contributing to pollution in our communities, waterways, and ecosystems across Nigeria.</p>
         </div>
         <div class="prob-card">
           <p class="prob-num">02</p>
-          <h3>Environmental Pollution</h3>
-          <p>Single-use plastics contribute 26% of total environmental pollution in Nigeria — with 2.5 million tonnes of plastic waste generated every year.</p>
+          <h3>Wasted Agricultural Resource</h3>
+          <p>Large quantities of banana stems are discarded after harvest despite containing valuable natural fibres that can be transformed into useful products. A resource treated as waste.</p>
         </div>
         <div class="prob-card">
           <p class="prob-num">03</p>
-          <h3>No Affordable Alternative</h3>
-          <p>Businesses face a choice between affordable but weak packaging, or durable but expensive options. There has been no middle ground — until now.</p>
+          <h3>An Untapped Opportunity</h3>
+          <p>This challenge presents an opportunity to rethink how packaging materials are produced and used — and to turn two problems into one solution.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SOLUTION -->
+  <!-- WHY IT MATTERS -->
   <section class="section" style="padding-top:0;">
     <div class="wrap">
       <div class="sol-wrap">
         <div class="sol-left">
-          <p class="eyebrow" style="color:rgba(255,255,255,.6);">Our Solution</p>
-          <h2>NaturePacks™ — Stronger, Sustainable & Affordable.</h2>
-          <p>We transform banana and plantain fiber agricultural residues into premium packaging that protects goods better than low-grade plastics, while converting agricultural waste into value.</p>
-          <a class="btn btn-white" href="./process.html">See How We Make It</a>
+          <p class="eyebrow" style="color:rgba(255,255,255,.6);">Why This Matters to Us</p>
+          <h2>Waste should not be the end of a product's story.</h2>
+          <p>At Looped Innovation, our motivation comes from seeing two problems existing side by side: growing plastic pollution and the underutilisation of agricultural resources. Rather than viewing banana stems as waste, we see them as a valuable raw material capable of supporting more sustainable manufacturing practices.</p>
+          <p style="opacity:.75;font-size:.9rem;margin-top:12px;">We are driven by the belief that innovation should create both environmental and economic value, benefiting businesses, communities, and future generations.</p>
+          <a class="btn btn-white" style="margin-top:28px;" href="./process.html">See How We Make It</a>
         </div>
         <div class="sol-right">
           <div class="sol-item">
-            <h4>Agricultural Fiber</h4>
-            <p>Banana and plantain stem fibers create a fiber-rich material with exceptional strength and natural durability.</p>
+            <h4>Reduce Agricultural Waste</h4>
+            <p>Banana stem residues are transformed from discarded by-products into a primary raw material for production.</p>
           </div>
           <div class="sol-item">
-            <h4>Full Product Range</h4>
-            <p>Paper bags, packaging boxes, and custom eco-packaging for retail, food, fashion, and e-commerce MSMEs.</p>
+            <h4>Reduce Plastic Dependence</h4>
+            <p>Businesses gain access to a practical, durable, and environmentally responsible packaging alternative.</p>
           </div>
           <div class="sol-item">
-            <h4>Circular Economy</h4>
-            <p>Converts agricultural waste into value, creates local jobs, and reduces plastic pollution simultaneously.</p>
+            <h4>Create Economic Value</h4>
+            <p>Farmers, communities, and businesses all benefit — supporting a circular economy that works for everyone.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NATUREPACKS INTRO -->
+  <section class="section" style="background:#fff; padding: 96px 0; max-width:100%;">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Introducing NaturePacks™</p>
+        <h2>Banana stem waste, transformed into durable packaging.</h2>
+        <p>NaturePacks™ is a sustainable packaging solution developed by Looped Innovation that transforms discarded banana stems into durable paper suitable for packaging applications — using a structured production process involving fibre extraction, pulping, sheet formation, drying, and finishing.</p>
+      </div>
+      <div class="sol-benefits">
+        <div class="benefit-grid">
+          <div class="benefit">Reduces agricultural waste</div>
+          <div class="benefit">Reduces dependence on plastic packaging</div>
+          <div class="benefit">Creates additional value for farmers</div>
+          <div class="benefit">Supports sustainable business practices</div>
+          <div class="benefit">Promotes a circular economy</div>
+          <div class="benefit">Practical for Nigerian MSMEs</div>
         </div>
       </div>
     </div>
@@ -497,24 +526,24 @@
     </div>
   </section>
 
-  <!-- OUR ASK -->
+  <!-- JOIN US -->
   <section class="ask-wrap" id="ask">
     <div class="ask-inner">
-      <p class="eyebrow">Our Ask</p>
-      <h2>We are seeking ₦10,000,000 to scale production.</h2>
-      <p>Funds will be deployed to procure an industrial blender and finalize our custom equipment fabrication — enabling us to move from prototype stage to full-scale production.</p>
+      <p class="eyebrow">Join Us in Building a More Sustainable Future</p>
+      <h2>The transition to sustainable packaging cannot be achieved by innovators alone.</h2>
+      <p>We invite businesses, investors, researchers, sustainability advocates, and community partners to join us in advancing a future where agricultural waste becomes a valuable resource rather than a discarded by-product. Together, we can reduce waste, create economic opportunities, and make sustainable packaging more accessible for businesses across Nigeria and beyond.</p>
       <div class="ask-uses">
         <div class="ask-use">
-          <h4>Industrial Blender</h4>
-          <p>Core equipment for scaling fiber pulping capacity to meet growing MSME demand.</p>
+          <h4>Businesses</h4>
+          <p>Switch to sustainable packaging that protects your products and your brand's environmental reputation.</p>
         </div>
         <div class="ask-use">
-          <h4>Equipment Completion</h4>
-          <p>Finalize fabrication of the drying mechanism and full processing line.</p>
+          <h4>Investors</h4>
+          <p>Back a scalable, circular economy solution with a proven product and a growing MSME customer base.</p>
         </div>
         <div class="ask-use">
-          <h4>Marketing Support</h4>
-          <p>Customer acquisition, digital marketing, and brand visibility campaigns.</p>
+          <h4>Community Partners</h4>
+          <p>Work with us to source agricultural waste locally, creating jobs and value within farming communities.</p>
         </div>
       </div>
       <div class="ask-btns">
