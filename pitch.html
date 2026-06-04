@@ -34,7 +34,12 @@
       background: rgba(248,244,240,.96); backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(90,62,39,.08);
     }
-    .hdr-logo img { height: 40px; width: auto; }
+    .hdr-logo { display: flex; flex-direction: column; line-height: 1.15; }
+    .hdr-logo .np { font-size: 1.25rem; font-weight: 900; letter-spacing: -.01em; }
+    .hdr-logo .np .n { color: var(--brown); }
+    .hdr-logo .np .p { color: var(--green); }
+    .hdr-logo .np sup { font-size: .5em; color: var(--brown); }
+    .hdr-logo .sub { font-size: .6rem; font-weight: 500; color: var(--brown3); letter-spacing: .04em; }
     .hdr-nav { display: flex; align-items: center; gap: 4px; }
     .hdr-nav a { font-size: .84rem; font-weight: 500; color: var(--brown); padding: 7px 14px; border-radius: 100px; transition: background .15s; }
     .hdr-nav a:hover, .hdr-nav a.active { background: rgba(90,62,39,.08); }
@@ -165,6 +170,10 @@
     .tm-info h4 { font-size: .85rem; font-weight: 800; color: var(--brown); margin-bottom: 4px; }
     .tm-info span { font-size: .68rem; color: var(--green); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
 
+    /* PITCH IMAGE ROW */
+    .pitch-img-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 48px; border-radius: 20px; overflow: hidden; }
+    .pitch-img img { width: 100%; aspect-ratio: 3/2; object-fit: cover; display: block; }
+
     /* BENEFITS GRID */
     .benefit-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border-top: 1px solid rgba(90,62,39,.1); }
     .benefit { padding: 28px 32px; border-right: 1px solid rgba(90,62,39,.1); border-bottom: 1px solid rgba(90,62,39,.1); font-size: .95rem; font-weight: 600; color: var(--brown); }
@@ -204,6 +213,7 @@
       .prob-grid { grid-template-columns: 1fr; }
       .sol-wrap { grid-template-columns: 1fr; padding: 40px 28px; }
       .prod-3 { grid-template-columns: 1fr 1fr; }
+      .pitch-img-row { grid-template-columns: 1fr; }
       .market-grid { grid-template-columns: 1fr; }
       .market-inner { padding: 0 24px; }
       .tract-grid { grid-template-columns: 1fr 1fr; }
@@ -226,7 +236,8 @@
 
 <header class="hdr">
   <a href="./index.html" class="hdr-logo">
-    <img src="./assets/Looped_Innovation_Logo.png" alt="Looped Innovation">
+    <div class="np"><span class="n">Nature</span><span class="p">Packs</span><sup>™</sup></div>
+    <span class="sub">by Looped Innovation</span>
   </a>
   <nav class="hdr-nav" id="site-nav">
     <a href="./index.html">Home</a>
@@ -272,6 +283,11 @@
         <h2>Plastic pollution and agricultural waste — two problems, one solution.</h2>
         <p>Plastic packaging has become an essential part of modern commerce, but its environmental cost is becoming increasingly difficult to ignore. Millions of plastic bags and packaging materials are discarded every year, contributing to pollution in our communities, waterways, and ecosystems.</p>
       </div>
+      <div class="pitch-img-row">
+        <div class="pitch-img"><img src="./assets/plasticwaste.jpg" alt="Plastic waste pollution"></div>
+        <div class="pitch-img"><img src="./assets/stems.png" alt="Banana plantation stems — the raw agricultural source"></div>
+        <div class="pitch-img"><img src="./assets/paper.png" alt="NaturePacks natural fiber material texture"></div>
+      </div>
       <div class="prob-grid">
         <div class="prob-card">
           <p class="prob-num">01</p>
@@ -292,8 +308,15 @@
     </div>
   </section>
 
+  <!-- FOUNDER IMAGE -->
+  <div style="max-width:1200px;margin-inline:auto;padding:0 40px 0;">
+    <div style="border-radius:20px;overflow:hidden;box-shadow:0 16px 56px rgba(90,62,39,.2);">
+      <img src="./assets/process/ourfounderandfabricators.jpeg" alt="Blessing Ekwere and the fabrication team" style="width:100%;max-height:480px;object-fit:cover;display:block;object-position:center 30%;">
+    </div>
+  </div>
+
   <!-- WHY IT MATTERS -->
-  <section class="section" style="padding-top:0;">
+  <section class="section" style="padding-top:48px;">
     <div class="wrap">
       <div class="sol-wrap">
         <div class="sol-left">

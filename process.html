@@ -36,7 +36,12 @@
       background: rgba(248,244,240,.96); backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(90,62,39,.08);
     }
-    .hdr-logo img { height: 40px; width: auto; }
+    .hdr-logo { display: flex; flex-direction: column; line-height: 1.15; }
+    .hdr-logo .np { font-size: 1.25rem; font-weight: 900; letter-spacing: -.01em; }
+    .hdr-logo .np .n { color: var(--brown); }
+    .hdr-logo .np .p { color: var(--green); }
+    .hdr-logo .np sup { font-size: .5em; color: var(--brown); }
+    .hdr-logo .sub { font-size: .6rem; font-weight: 500; color: var(--brown3); letter-spacing: .04em; }
     .hdr-nav { display: flex; align-items: center; gap: 4px; }
     .hdr-nav a { font-size: .84rem; font-weight: 500; color: var(--brown); padding: 7px 14px; border-radius: 100px; transition: background .15s; }
     .hdr-nav a:hover, .hdr-nav a.active { background: rgba(90,62,39,.08); }
@@ -149,7 +154,8 @@
 
 <header class="hdr">
   <a href="./index.html" class="hdr-logo">
-    <img src="./assets/Looped_Innovation_Logo.png" alt="Looped Innovation">
+    <div class="np"><span class="n">Nature</span><span class="p">Packs</span><sup>™</sup></div>
+    <span class="sub">by Looped Innovation</span>
   </a>
   <nav class="hdr-nav" id="site-nav">
     <a href="./index.html">Home</a>
