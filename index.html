@@ -115,7 +115,7 @@
     /* MATERIAL */
     .material { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
     .mat-img { border-radius: var(--r2); overflow: hidden; box-shadow: var(--sh2); }
-    .mat-img img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; display: block; }
+    .mat-img img { width: 100%; object-fit: cover; }
     .mat-copy { display: flex; flex-direction: column; gap: 20px; }
     .mat-copy h2 { font-size: clamp(1.7rem,3vw,2.6rem); font-weight: 800; color: var(--brown); line-height: 1.2; }
     .mat-copy p  { font-size: .95rem; color: var(--brown3); line-height: 1.75; }
@@ -141,7 +141,7 @@
     .prod-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     .pcard { border-radius: var(--r2); overflow: hidden; box-shadow: var(--sh); background: var(--cream); transition: transform .2s,box-shadow .2s; }
     .pcard:hover { transform: translateY(-5px); box-shadow: var(--sh2); }
-    .pcard img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .pcard img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #ede6db; padding: 16px; }
     .pcard-info { padding: 22px 24px; }
     .pcard-info h3 { font-size: 1rem; font-weight: 800; color: var(--brown); margin-bottom: 6px; }
     .pcard-info p  { font-size: .84rem; color: var(--brown3); }
@@ -225,8 +225,7 @@
     .tm:hover { transform: translateY(-4px); }
     .tm-img { height: 340px; overflow: hidden; }
     .tm-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-    .tm.ceo .tm-img { position: relative; }
-    .tm.ceo .tm-img img { position: absolute; top: 0; left: 0; height: 100%; width: auto; max-width: none; object-fit: unset; }
+    .tm.ceo .tm-img img { object-position: left top; }
     .tm.techlead .tm-img { background: #fff; }
     .tm.techlead .tm-img img { object-fit: contain; object-position: center bottom; transform: scale(1.55); transform-origin: center bottom; }
     .tm-info { padding: 20px 16px 24px; }
@@ -265,8 +264,7 @@
     @media (max-width: 1024px) {
       .band-stats { grid-template-columns: repeat(2,1fr); gap: 24px; }
       .band-stat { border-right: none; padding: 0; }
-      .team-grid  { grid-template-columns: repeat(5,1fr); }
-      .tm-img { height: 260px; }
+      .team-grid  { grid-template-columns: repeat(3,1fr); }
     }
     @media (max-width: 860px) {
       .hdr { padding: 0 24px; }
@@ -277,38 +275,24 @@
       .hero-visual { display: none; }
       .sol { grid-template-columns: 1fr; padding: 40px 28px; }
       .material { grid-template-columns: 1fr; }
-      .mat-img img { min-height: 320px; }
       .mkt-grid { grid-template-columns: 1fr; }
       .how-grid { grid-template-columns: 1fr 1fr; }
       .val-grid { grid-template-columns: 1fr; }
       .adv-grid { grid-template-columns: 1fr; }
       .biz-grid { grid-template-columns: 1fr; }
       .team-grid { grid-template-columns: repeat(2,1fr); }
-      .tm-img { height: 260px; }
       .prob-cards { grid-template-columns: 1fr; }
       .prod-grid { grid-template-columns: 1fr 1fr; }
       .t-grid { grid-template-columns: 1fr 1fr; }
       .ftr-grid { grid-template-columns: 1fr; gap: 32px; }
       .wrap { padding: 0 24px; }
-      .team-exp { flex-direction: column; gap: 8px; padding: 28px 24px; }
     }
     @media (max-width: 560px) {
       .how-grid { grid-template-columns: 1fr; }
       .prod-grid { grid-template-columns: 1fr; }
-      .t-grid    { grid-template-columns: 1fr 1fr; }
+      .t-grid    { grid-template-columns: 1fr; }
       .hero-stats { flex-direction: column; gap: 16px; }
       .team-grid { grid-template-columns: repeat(2,1fr); }
-      .tm-img { height: 220px; }
-      .tm-info h4 { font-size: .82rem; }
-      .tm-info span { font-size: .66rem; }
-      .band-stats { grid-template-columns: repeat(2,1fr); gap: 20px; }
-      .band-stat strong { font-size: 1.6rem; }
-      .val-grid { gap: 2px; }
-      .biz-grid { grid-template-columns: 1fr; }
-      .adv-grid { grid-template-columns: 1fr; }
-      .section { padding: 48px 0; }
-      .sec-head { margin-bottom: 36px; }
-      .prob-cards { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -321,9 +305,10 @@
   </a>
   <nav class="hdr-nav" id="nav">
     <a href="#problem">The Problem</a>
+    <a href="#solution">Solution</a>
+    <a href="#how">How It Works</a>
     <a href="#products">Products</a>
-    <a href="./process.html">Process</a>
-    <a href="./pitch.html">Pitch</a>
+    <a href="#market">Market</a>
     <a href="#team">Team</a>
     <a class="cta" href="https://loopedinnovation.com.ng/" target="_blank" rel="noopener noreferrer">Visit Website</a>
   </nav>
@@ -460,7 +445,7 @@
         <h2>Eco-packaging built for every MSME need.</h2>
       </div>
       <div class="prod-hero">
-        <img src="./assets/LOOPEDPRODUCR.png" alt="Full NaturePacks product range">
+        <img src="./assets/paper.png" alt="NaturePacks natural fiber material — the raw texture">
       </div>
       <div class="prod-grid">
         <div class="pcard">
@@ -472,7 +457,7 @@
           </div>
         </div>
         <div class="pcard">
-          <img src="./assets/finalproduxts_4.png" alt="NaturePacks branded bag">
+          <img src="./assets/finalproduxts_2.png" alt="NaturePacks plain bag">
           <div class="pcard-info">
             <h3>Packaging Boxes</h3>
             <p>Strong, moisture-resistant boxes for retail, food, and e-commerce. Flat-pack, ready to brand.</p>
@@ -480,7 +465,7 @@
           </div>
         </div>
         <div class="pcard">
-          <img src="./assets/finalproduxts.png" alt="NaturePacks full product range">
+          <img src="./assets/finalproduxts_5.png" alt="NaturePacks open bag showing interior">
           <div class="pcard-info">
             <h3>Custom Eco-Packaging</h3>
             <p>Fully branded, personalized packaging with your logo and design printed on natural fiber material.</p>
