@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Our Pitch — NaturePacks™ by Looped Innovation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brown:  #5A3E27;
+      --brown2: #C1A38B;
+      --brown3: #9F8070;
+      --cream:  #F8F4F0;
+      --green:  #687527;
+      --green2: #4a5618;
+      --white:  #ffffff;
+      --text:   #2b1e10;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: var(--cream); color: var(--text); line-height: 1.65; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { max-width: 1200px; margin-inline: auto; padding: 0 40px; }
+    .eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--green); }
+
+    /* HEADER */
+    .hdr {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 68px;
+      background: rgba(248,244,240,.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(90,62,39,.08);
+    }
+    .hdr-logo img { height: 40px; width: auto; }
+    .hdr-nav { display: flex; align-items: center; gap: 4px; }
+    .hdr-nav a { font-size: .84rem; font-weight: 500; color: var(--brown); padding: 7px 14px; border-radius: 100px; transition: background .15s; }
+    .hdr-nav a:hover, .hdr-nav a.active { background: rgba(90,62,39,.08); }
+    .hdr-nav .nav-cta { background: var(--green); color: #fff; padding: 8px 22px; }
+    .hdr-nav .nav-cta:hover { background: var(--green2); }
+    .hdr-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+    .hdr-burger span { display: block; width: 24px; height: 2px; background: var(--brown); border-radius: 2px; }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 36px; border-radius: 100px; font-family: inherit; font-size: .95rem; font-weight: 700; cursor: pointer; border: none; text-decoration: none; transition: transform .18s, box-shadow .18s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-green { background: var(--green); color: #fff; }
+    .btn-green:hover { background: var(--green2); }
+    .btn-outline { background: transparent; color: var(--brown); border: 2px solid var(--brown); }
+    .btn-white  { background: #fff; color: var(--green2); }
+    .btn-ghost  { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5); }
+
+    /* HERO */
+    .hero { background: var(--brown); color: #fff; padding: 100px 40px 80px; }
+    .hero-inner { max-width: 1200px; margin-inline: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .hero-left .eyebrow { color: var(--brown2); margin-bottom: 16px; }
+    .hero-left h1 { font-size: clamp(2.4rem,5vw,4rem); font-weight: 900; line-height: 1.08; letter-spacing: -.02em; margin-bottom: 20px; }
+    .hero-left h1 span { color: var(--brown2); }
+    .hero-left p { font-size: 1rem; opacity: .75; line-height: 1.7; margin-bottom: 32px; max-width: 460px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; margin-top: 48px; border-top: 1px solid rgba(255,255,255,.12); padding-top: 40px; }
+    .hs { border-right: 1px solid rgba(255,255,255,.1); padding-right: 24px; }
+    .hs:last-child { border-right: none; }
+    .hs strong { display: block; font-size: 2rem; font-weight: 900; color: var(--brown2); }
+    .hs span { font-size: .76rem; opacity: .6; }
+    .hero-img { border-radius: 20px; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,.3); }
+    .hero-img img { width: 100%; object-fit: cover; }
+
+    /* SECTION STYLES */
+    .section { padding: 96px 0; }
+    .sec-head { margin-bottom: 64px; }
+    .sec-head h2 { font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight: 800; color: var(--brown); line-height: 1.2; margin-top: 10px; }
+    .sec-head p { color: var(--brown3); font-size: .95rem; max-width: 560px; margin-top: 12px; }
+
+    /* PROBLEM */
+    .prob-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border-radius: 20px; overflow: hidden; }
+    .prob-card { padding: 48px 36px; }
+    .prob-card:nth-child(1) { background: var(--brown); color: #fff; }
+    .prob-card:nth-child(2) { background: #4a2f18; color: #fff; }
+    .prob-card:nth-child(3) { background: #3a2412; color: #fff; }
+    .prob-num { font-size: .68rem; font-weight: 700; letter-spacing: .12em; color: var(--brown2); text-transform: uppercase; margin-bottom: 20px; }
+    .prob-card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 12px; }
+    .prob-card p { font-size: .85rem; opacity: .72; line-height: 1.7; }
+
+    /* SOLUTION */
+    .sol-wrap { background: var(--green); border-radius: 20px; padding: 72px 56px; color: #fff; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .sol-left h2 { font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 800; line-height: 1.15; margin-bottom: 16px; }
+    .sol-left p { font-size: .95rem; opacity: .82; line-height: 1.75; margin-bottom: 28px; }
+    .sol-right { display: flex; flex-direction: column; gap: 20px; }
+    .sol-item { border-top: 1px solid rgba(255,255,255,.15); padding-top: 20px; }
+    .sol-item h4 { font-size: .95rem; font-weight: 700; margin-bottom: 6px; }
+    .sol-item p { font-size: .82rem; opacity: .7; }
+
+    /* PRODUCT */
+    .prod-full { border-radius: 20px; overflow: hidden; margin-bottom: 32px; box-shadow: 0 16px 56px rgba(90,62,39,.2); }
+    .prod-full img { width: 100%; max-height: 500px; object-fit: cover; }
+    .prod-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .prod-card { border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 24px rgba(90,62,39,.1); }
+    .prod-card img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #ede6db; padding: 16px; }
+    .prod-info { padding: 20px 22px; }
+    .prod-info h4 { font-size: .95rem; font-weight: 800; color: var(--brown); margin-bottom: 6px; }
+    .prod-info p { font-size: .82rem; color: var(--brown3); }
+
+    /* MARKET */
+    .market-wrap { background: var(--brown); color: #fff; padding: 96px 0; }
+    .market-inner { max-width: 1200px; margin-inline: auto; padding: 0 40px; }
+    .market-inner .sec-head h2 { color: #fff; }
+    .market-inner .sec-head .eyebrow { color: var(--brown2); }
+    .market-inner .sec-head p { color: rgba(255,255,255,.6); }
+    .market-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .m-bars { display: flex; flex-direction: column; gap: 12px; }
+    .m-row { display: grid; grid-template-columns: 72px 1fr; gap: 16px; align-items: center; }
+    .m-lbl { text-align: right; }
+    .m-lbl strong { display: block; font-size: 1rem; font-weight: 900; }
+    .m-lbl span { font-size: .65rem; opacity: .55; letter-spacing: .06em; text-transform: uppercase; }
+    .m-bar { height: 52px; border-radius: 8px; display: flex; align-items: center; padding: 0 24px; font-weight: 700; font-size: .82rem; }
+    .m-bar.tam { background: var(--brown2); color: var(--text); }
+    .m-bar.sam { background: var(--green); color: #fff; width: 70%; }
+    .m-bar.som { background: rgba(255,255,255,.15); color: #fff; width: 40%; }
+    .seg-block h4 { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--brown2); margin-bottom: 14px; }
+    .seg-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .seg-tag { background: rgba(255,255,255,.08); color: rgba(255,255,255,.8); padding: 8px 16px; font-size: .8rem; font-weight: 500; border-radius: 4px; }
+    .drivers { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .drivers li { font-size: .88rem; opacity: .7; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+
+    /* TRACTION */
+    .tract-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; border-top: 1px solid rgba(90,62,39,.12); border-bottom: 1px solid rgba(90,62,39,.12); margin-bottom: 48px; }
+    .tn { padding: 36px 24px; border-right: 1px solid rgba(90,62,39,.1); }
+    .tn:last-child { border-right: none; }
+    .tn strong { display: block; font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 900; color: var(--brown); letter-spacing: -.02em; }
+    .tn span { font-size: .78rem; color: var(--brown3); margin-top: 4px; display: block; }
+    .loopedstand-img { border-radius: 20px; overflow: hidden; box-shadow: 0 16px 56px rgba(90,62,39,.2); }
+    .loopedstand-img img { width: 100%; max-height: 480px; object-fit: cover; }
+
+    /* BUSINESS MODEL */
+    .biz-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border-top: 1px solid rgba(90,62,39,.1); }
+    .biz-item { padding: 44px 36px; border-right: 1px solid rgba(90,62,39,.1); }
+    .biz-item:last-child { border-right: none; }
+    .biz-num { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--brown2); margin-bottom: 20px; }
+    .biz-item h3 { font-size: 1.1rem; font-weight: 800; color: var(--brown); margin-bottom: 12px; }
+    .biz-item p { font-size: .85rem; color: var(--brown3); line-height: 1.7; }
+
+    /* COMPETITIVE ADV */
+    .adv-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 0; }
+    .adv-card { padding: 44px 40px; border-bottom: 1px solid rgba(90,62,39,.1); border-right: 1px solid rgba(90,62,39,.1); }
+    .adv-card:nth-child(2n) { border-right: none; }
+    .adv-card:nth-last-child(-n+2) { border-bottom: none; }
+    .adv-card:nth-child(1) { background: var(--brown); color: #fff; }
+    .adv-card:nth-child(1) p { color: rgba(255,255,255,.7); }
+    .adv-card:nth-child(2) { background: var(--green); color: #fff; }
+    .adv-card:nth-child(2) p { color: rgba(255,255,255,.7); }
+    .adv-idx { font-size: .68rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; opacity: .5; margin-bottom: 16px; }
+    .adv-card h4 { font-size: 1.2rem; font-weight: 800; margin-bottom: 10px; line-height: 1.2; }
+    .adv-card p { font-size: .85rem; line-height: 1.7; }
+
+    /* TEAM */
+    .team-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 2px; border-radius: 20px; overflow: hidden; }
+    .tm { background: var(--cream); text-align: center; overflow: hidden; }
+    .tm-img { height: 280px; overflow: hidden; }
+    .tm-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .tm.ceo .tm-img img { object-position: left top; }
+    .tm.techlead .tm-img img { object-fit: contain; background: #fff; object-position: center bottom; transform: scale(1.55); transform-origin: center bottom; }
+    .tm-info { padding: 18px 14px 22px; }
+    .tm-info h4 { font-size: .85rem; font-weight: 800; color: var(--brown); margin-bottom: 4px; }
+    .tm-info span { font-size: .68rem; color: var(--green); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+
+    /* ASK */
+    .ask-wrap { background: linear-gradient(135deg, var(--green2), var(--green)); padding: 96px 40px; color: #fff; }
+    .ask-inner { max-width: 900px; margin-inline: auto; }
+    .ask-inner .eyebrow { color: rgba(255,255,255,.6); margin-bottom: 16px; }
+    .ask-inner h2 { font-size: clamp(2rem,4vw,3.2rem); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+    .ask-inner p { font-size: 1rem; opacity: .82; max-width: 600px; margin-bottom: 40px; }
+    .ask-uses { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 40px; }
+    .ask-use { background: rgba(255,255,255,.1); border-radius: 12px; padding: 24px 22px; }
+    .ask-use h4 { font-size: .9rem; font-weight: 700; margin-bottom: 8px; }
+    .ask-use p { font-size: .8rem; opacity: .75; }
+    .ask-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .ask-contact { display: flex; gap: 28px; flex-wrap: wrap; font-size: .82rem; opacity: .65; margin-top: 24px; }
+
+    /* FOOTER */
+    .ftr { background: var(--brown); color: #fff; padding: 32px 40px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .ftr span { font-size: .76rem; opacity: .45; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .team-grid { grid-template-columns: repeat(3,1fr); }
+    }
+    @media (max-width: 860px) {
+      .hdr { padding: 0 24px; }
+      .hdr-nav { display: none; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--cream); padding: 16px 24px; border-bottom: 1px solid rgba(90,62,39,.1); gap: 4px; z-index: 99; }
+      .hdr-nav.open { display: flex; }
+      .hdr-burger { display: flex; }
+      .hero { padding: 64px 24px 56px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-img { display: none; }
+      .hero-stats { grid-template-columns: repeat(2,1fr); }
+      .prob-grid { grid-template-columns: 1fr; }
+      .sol-wrap { grid-template-columns: 1fr; padding: 40px 28px; }
+      .prod-3 { grid-template-columns: 1fr 1fr; }
+      .market-grid { grid-template-columns: 1fr; }
+      .market-inner { padding: 0 24px; }
+      .tract-grid { grid-template-columns: 1fr 1fr; }
+      .biz-grid { grid-template-columns: 1fr; }
+      .adv-grid { grid-template-columns: 1fr; }
+      .adv-card { border-right: none; }
+      .team-grid { grid-template-columns: repeat(2,1fr); }
+      .ask-uses { grid-template-columns: 1fr; }
+      .wrap { padding: 0 24px; }
+      .section { padding: 64px 0; }
+    }
+    @media (max-width: 560px) {
+      .prod-3 { grid-template-columns: 1fr; }
+      .tract-grid { grid-template-columns: 1fr 1fr; }
+      .hero-stats { grid-template-columns: repeat(2,1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <a href="./index.html" class="hdr-logo">
+    <img src="./assets/Looped_Innovation_Logo.png" alt="Looped Innovation">
+  </a>
+  <nav class="hdr-nav" id="site-nav">
+    <a href="./index.html">Home</a>
+    <a href="./process.html">Process</a>
+    <a href="./pitch.html" class="active">Pitch</a>
+    <a class="nav-cta" href="https://loopedinnovation.com.ng/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+  </nav>
+  <button class="hdr-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-left">
+        <p class="eyebrow">Looped Innovation — Investor Pitch</p>
+        <h1>Double Protection For <span>Product</span> & <span>Planet.</span></h1>
+        <p>Turning banana and plantain agricultural waste into durable, eco-friendly packaging built specifically for Nigerian MSMEs — stronger than plastic, better for the earth.</p>
+        <div class="hero-btns">
+          <a class="btn btn-white" href="https://loopedinnovation.com.ng/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+          <a class="btn btn-ghost" href="#ask">Our Ask</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hs"><strong>20K+</strong><span>Units Delivered</span></div>
+          <div class="hs"><strong>100+</strong><span>MSME Customers</span></div>
+          <div class="hs"><strong>₦960B</strong><span>Market Size</span></div>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="./assets/stem.png" alt="NaturePacks — Double Protection for Product and Planet">
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">The Problem</p>
+        <h2>Nigeria's packaging crisis has no middle ground.</h2>
+      </div>
+      <div class="prob-grid">
+        <div class="prob-card">
+          <p class="prob-num">01</p>
+          <h3>Reliant on Plastic</h3>
+          <p>Widely used plastic packaging tears easily, cannot handle weight or moisture, leading to significant product damage and losses for Nigerian MSMEs.</p>
+        </div>
+        <div class="prob-card">
+          <p class="prob-num">02</p>
+          <h3>Environmental Pollution</h3>
+          <p>Single-use plastics contribute 26% of total environmental pollution in Nigeria — with 2.5 million tonnes of plastic waste generated every year.</p>
+        </div>
+        <div class="prob-card">
+          <p class="prob-num">03</p>
+          <h3>No Affordable Alternative</h3>
+          <p>Businesses face a choice between affordable but weak packaging, or durable but expensive options. There has been no middle ground — until now.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sol-wrap">
+        <div class="sol-left">
+          <p class="eyebrow" style="color:rgba(255,255,255,.6);">Our Solution</p>
+          <h2>NaturePacks™ — Stronger, Sustainable & Affordable.</h2>
+          <p>We transform banana and plantain fiber agricultural residues into premium packaging that protects goods better than low-grade plastics, while converting agricultural waste into value.</p>
+          <a class="btn btn-white" href="./process.html">See How We Make It</a>
+        </div>
+        <div class="sol-right">
+          <div class="sol-item">
+            <h4>Agricultural Fiber</h4>
+            <p>Banana and plantain stem fibers create a fiber-rich material with exceptional strength and natural durability.</p>
+          </div>
+          <div class="sol-item">
+            <h4>Full Product Range</h4>
+            <p>Paper bags, packaging boxes, and custom eco-packaging for retail, food, fashion, and e-commerce MSMEs.</p>
+          </div>
+          <div class="sol-item">
+            <h4>Circular Economy</h4>
+            <p>Converts agricultural waste into value, creates local jobs, and reduces plastic pollution simultaneously.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="section" style="background:#fff; padding: 96px 0; max-width: 100%;">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Products</p>
+        <h2>Eco-packaging built for every MSME need.</h2>
+      </div>
+      <div class="prod-full">
+        <img src="./assets/LOOPEDPRODUCR.png" alt="Full NaturePacks product range">
+      </div>
+      <div class="prod-3">
+        <div class="prod-card">
+          <img src="./assets/finalproduxts_4.png" alt="NaturePacks paper bag">
+          <div class="prod-info"><h4>Paper Bags</h4><p>Reinforced banana fiber bags in multiple sizes with twisted rope or flat handles.</p></div>
+        </div>
+        <div class="prod-card">
+          <img src="./assets/finalproduxts_1.png" alt="NaturePacks branded bag">
+          <div class="prod-info"><h4>Branded Bags</h4><p>Custom branding printed directly on natural fiber material for your business identity.</p></div>
+        </div>
+        <div class="prod-card">
+          <img src="./assets/finalproduxts.png" alt="NaturePacks full range">
+          <div class="prod-info"><h4>Custom Eco-Packaging</h4><p>Boxes, sheets, and fully personalized packaging solutions designed for MSMEs.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARKET SIZE -->
+  <section class="market-wrap">
+    <div class="market-inner">
+      <div class="sec-head">
+        <p class="eyebrow">Market Size</p>
+        <h2>A ₦960 billion opportunity.</h2>
+        <p>Nigeria's packaging market represents a massive untapped opportunity for sustainable alternatives.</p>
+      </div>
+      <div class="market-grid">
+        <div class="m-bars">
+          <div class="m-row">
+            <div class="m-lbl"><strong>₦960B</strong><span>TAM</span></div>
+            <div class="m-bar tam">Total Addressable Market</div>
+          </div>
+          <div class="m-row">
+            <div class="m-lbl"><strong>₦96B</strong><span>SAM</span></div>
+            <div class="m-bar sam">Serviceable Market</div>
+          </div>
+          <div class="m-row">
+            <div class="m-lbl"><strong>₦96M</strong><span>SOM</span></div>
+            <div class="m-bar som">Initial Target</div>
+          </div>
+        </div>
+        <div>
+          <div class="seg-block">
+            <h4>Target Segments</h4>
+            <div class="seg-tags">
+              <span class="seg-tag">Retail</span>
+              <span class="seg-tag">Food</span>
+              <span class="seg-tag">Fashion</span>
+              <span class="seg-tag">E-Commerce</span>
+            </div>
+          </div>
+          <div class="seg-block">
+            <h4>Market Drivers</h4>
+            <ul class="drivers">
+              <li>Rapid growth of small businesses in Nigeria</li>
+              <li>High demand for durable packaging</li>
+              <li>Regulatory shift toward sustainable alternatives</li>
+              <li>Growing Nigerian e-commerce sector</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRACTION -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Traction & Validation</p>
+        <h2>Real results, proven in the Nigerian market.</h2>
+      </div>
+      <div class="tract-grid">
+        <div class="tn"><strong>20K+</strong><span>Packaging units delivered</span></div>
+        <div class="tn"><strong>100+</strong><span>Active MSME customers</span></div>
+        <div class="tn"><strong>2026</strong><span>Material testing completed</span></div>
+        <div class="tn"><strong>₦960B</strong><span>Total market opportunity</span></div>
+      </div>
+      <div class="loopedstand-img">
+        <img src="./assets/loopedstand.png" alt="Looped Innovation at an exhibition — NaturePacks display stand">
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPETITIVE ADVANTAGE -->
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Competitive Advantage</p>
+        <h2>Why NaturePacks™ wins where others fall short.</h2>
+      </div>
+      <div class="adv-grid">
+        <div class="adv-card">
+          <p class="adv-idx">01</p>
+          <h4>Durability + Sustainability</h4>
+          <p>We combine both — most packaging solutions offer only one or the other. NaturePacks™ is the middle ground the market has been waiting for.</p>
+        </div>
+        <div class="adv-card">
+          <p class="adv-idx">02</p>
+          <h4>Agricultural Fiber Strength</h4>
+          <p>Fiber-rich banana and plantain inputs produce stronger material than conventional recycled paper — verified by our own strength testing.</p>
+        </div>
+        <div class="adv-card">
+          <p class="adv-idx">03</p>
+          <h4>Local Production</h4>
+          <p>Made in Nigeria means lower cost, faster delivery, and shorter supply chains — passing savings directly to MSME customers.</p>
+        </div>
+        <div class="adv-card">
+          <p class="adv-idx">04</p>
+          <h4>MSME-First Design</h4>
+          <p>Built specifically for micro, small, and medium enterprises — flexible sizing, affordable pricing, custom branding support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS MODEL -->
+  <section class="section" style="background: var(--cream); padding: 96px 0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Business Model</p>
+        <h2>Three clear revenue streams designed for scale.</h2>
+      </div>
+      <div class="biz-grid">
+        <div class="biz-item">
+          <p class="biz-num">01</p>
+          <h3>Direct Sales</h3>
+          <p>Sell paper bags, packaging boxes, and custom eco-packaging directly to businesses through our website and direct outreach channels.</p>
+        </div>
+        <div class="biz-item">
+          <p class="biz-num">02</p>
+          <h3>Custom Branding Services</h3>
+          <p>Design and printing services for branded, personalized packaging solutions that grow with each client's business needs.</p>
+        </div>
+        <div class="biz-item">
+          <p class="biz-num">03</p>
+          <h3>Bulk MSME Contracts</h3>
+          <p>Recurring bulk supply agreements with micro, small, and medium enterprises for reliable, predictable revenue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">The Team</p>
+        <h2>25+ years of combined expertise.</h2>
+      </div>
+      <div class="team-grid">
+        <div class="tm ceo">
+          <div class="tm-img"><img src="./assets/ceo.png" alt="Blessing Ekwere — Founder and CEO"></div>
+          <div class="tm-info"><h4>Blessing Ekwere</h4><span>Founder / CEO</span></div>
+        </div>
+        <div class="tm techlead">
+          <div class="tm-img"><img src="./assets/technical_productlead.png" alt="Dave Olaniyan — Product Technical and Design Lead"></div>
+          <div class="tm-info"><h4>Dave Olaniyan</h4><span>Technical & Product Lead</span></div>
+        </div>
+        <div class="tm">
+          <div class="tm-img"><img src="./assets/brandinganddesign.png" alt="Emmanuel Dolapo — Branding and Design"></div>
+          <div class="tm-info"><h4>Emmanuel Dolapo</h4><span>Branding & Design</span></div>
+        </div>
+        <div class="tm">
+          <div class="tm-img"><img src="./assets/productionmanager.png" alt="Adewale Adeyanju — Production Manager"></div>
+          <div class="tm-info"><h4>Adewale Adeyanju</h4><span>Production Manager</span></div>
+        </div>
+        <div class="tm">
+          <div class="tm-img"><img src="./assets/finance.png" alt="Okase Egbe — Finance"></div>
+          <div class="tm-info"><h4>Okase Egbe</h4><span>Finance</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR ASK -->
+  <section class="ask-wrap" id="ask">
+    <div class="ask-inner">
+      <p class="eyebrow">Our Ask</p>
+      <h2>We are seeking ₦10,000,000 to scale production.</h2>
+      <p>Funds will be deployed to procure an industrial blender and finalize our custom equipment fabrication — enabling us to move from prototype stage to full-scale production.</p>
+      <div class="ask-uses">
+        <div class="ask-use">
+          <h4>Industrial Blender</h4>
+          <p>Core equipment for scaling fiber pulping capacity to meet growing MSME demand.</p>
+        </div>
+        <div class="ask-use">
+          <h4>Equipment Completion</h4>
+          <p>Finalize fabrication of the drying mechanism and full processing line.</p>
+        </div>
+        <div class="ask-use">
+          <h4>Marketing Support</h4>
+          <p>Customer acquisition, digital marketing, and brand visibility campaigns.</p>
+        </div>
+      </div>
+      <div class="ask-btns">
+        <a class="btn btn-white" href="https://loopedinnovation.com.ng/" target="_blank" rel="noopener noreferrer">Visit Looped Innovation</a>
+        <a class="btn btn-ghost" href="tel:07073451980">Call Us</a>
+      </div>
+      <div class="ask-contact">
+        <span>Loopedinnovation@gmail.com</span>
+        <span>@loopedinnovation</span>
+        <span>07073451980 / 07035381432</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr">
+  <span>© 2026 Looped Innovation. All rights reserved.</span>
+  <span>NaturePacks™ — Double Protection for Product & Planet</span>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.querySelector('.hdr-burger');
+    var nav = document.querySelector('#site-nav');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function(){
+      var open = !nav.classList.contains('open');
+      nav.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+  })();
+</script>
+</body>
+</html>

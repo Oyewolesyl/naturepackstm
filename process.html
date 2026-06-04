@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>How We Make It — NaturePacks™ by Looped Innovation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brown:  #5A3E27;
+      --brown2: #C1A38B;
+      --brown3: #9F8070;
+      --cream:  #F8F4F0;
+      --green:  #687527;
+      --green2: #4a5618;
+      --white:  #ffffff;
+      --text:   #2b1e10;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; background: var(--cream); color: var(--text); line-height: 1.65; }
+    img, video { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .wrap { max-width: 1200px; margin-inline: auto; padding: 0 40px; }
+
+    .eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--green); }
+
+    /* HEADER */
+    .hdr {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 68px;
+      background: rgba(248,244,240,.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(90,62,39,.08);
+    }
+    .hdr-logo img { height: 40px; width: auto; }
+    .hdr-nav { display: flex; align-items: center; gap: 4px; }
+    .hdr-nav a { font-size: .84rem; font-weight: 500; color: var(--brown); padding: 7px 14px; border-radius: 100px; transition: background .15s; }
+    .hdr-nav a:hover, .hdr-nav a.active { background: rgba(90,62,39,.08); }
+    .hdr-nav .nav-cta { background: var(--green); color: #fff; padding: 8px 22px; }
+    .hdr-nav .nav-cta:hover { background: var(--green2); }
+    .hdr-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+    .hdr-burger span { display: block; width: 24px; height: 2px; background: var(--brown); border-radius: 2px; }
+
+    /* HERO */
+    .hero {
+      position: relative; height: 80vh; min-height: 520px;
+      display: flex; align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-bg { position: absolute; inset: 0; }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+    .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(30,18,6,.85) 0%, rgba(30,18,6,.2) 60%, transparent 100%); }
+    .hero-copy { position: relative; z-index: 1; padding: 56px 48px; color: #fff; }
+    .hero-copy .eyebrow { color: var(--brown2); margin-bottom: 12px; }
+    .hero-copy h1 { font-size: clamp(2.2rem,5vw,4rem); font-weight: 900; line-height: 1.1; letter-spacing: -.02em; max-width: 680px; }
+    .hero-copy p { margin-top: 16px; font-size: 1rem; opacity: .8; max-width: 520px; }
+
+    /* PROCESS STEPS */
+    .process { padding: 96px 0; }
+    .process-step {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+      padding: 72px 0;
+      border-top: 1px solid rgba(90,62,39,.1);
+    }
+    .process-step:first-child { border-top: none; }
+    .process-step.reverse { direction: rtl; }
+    .process-step.reverse > * { direction: ltr; }
+    .step-num { font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--brown2); margin-bottom: 16px; }
+    .step-copy h2 { font-size: clamp(1.6rem,2.8vw,2.4rem); font-weight: 800; color: var(--brown); line-height: 1.2; margin-bottom: 16px; }
+    .step-copy p { font-size: .95rem; color: var(--brown3); line-height: 1.75; margin-bottom: 20px; }
+    .step-copy ul { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .step-copy li { font-size: .88rem; color: var(--text); padding: 12px 0; border-bottom: 1px solid rgba(90,62,39,.08); }
+    .step-copy li:last-child { border-bottom: none; }
+
+    .step-media { border-radius: 20px; overflow: hidden; box-shadow: 0 16px 56px rgba(90,62,39,.2); }
+    .step-media img, .step-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .step-media video { max-height: 480px; background: #000; }
+    .step-media img { max-height: 480px; }
+
+    .media-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .media-pair .step-media { border-radius: 16px; }
+
+    /* EQUIPMENT SECTION */
+    .equipment { background: var(--brown); color: #fff; padding: 96px 0; }
+    .equipment .sec-head { text-align: center; margin-bottom: 64px; }
+    .equipment .sec-head .eyebrow { color: var(--brown2); }
+    .equipment .sec-head h2 { font-size: clamp(1.8rem,3.5vw,3rem); font-weight: 800; color: #fff; line-height: 1.2; margin-top: 10px; }
+    .equipment .sec-head p { color: rgba(255,255,255,.65); font-size: .95rem; margin-top: 12px; max-width: 560px; margin-inline: auto; }
+
+    .eq-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+    .eq-card { background: rgba(255,255,255,.05); overflow: hidden; }
+    .eq-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform .4s; }
+    .eq-card:hover img { transform: scale(1.04); }
+    .eq-info { padding: 24px 28px; }
+    .eq-info h3 { font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .eq-info p { font-size: .82rem; color: rgba(255,255,255,.6); line-height: 1.65; }
+    .eq-tag { display: inline-block; margin-top: 12px; background: rgba(255,255,255,.08); color: var(--brown2); font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: 4px 14px; border-radius: 4px; }
+
+    /* VIDEO SHOWCASE */
+    .videos { padding: 96px 0; background: #fff; }
+    .vid-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .vid-card { border-radius: 20px; overflow: hidden; box-shadow: 0 4px 24px rgba(90,62,39,.12); background: #000; }
+    .vid-card video { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; }
+    .vid-info { background: var(--cream); padding: 20px 22px; }
+    .vid-info h4 { font-size: .95rem; font-weight: 700; color: var(--brown); }
+    .vid-info p { font-size: .8rem; color: var(--brown3); margin-top: 4px; }
+
+    /* CTA */
+    .cta { background: var(--green); padding: 80px 40px; text-align: center; color: #fff; }
+    .cta h2 { font-size: clamp(1.8rem,3vw,2.8rem); font-weight: 900; margin-bottom: 16px; }
+    .cta p { opacity: .85; margin-bottom: 32px; font-size: .95rem; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 36px; border-radius: 100px; font-family: inherit; font-size: .95rem; font-weight: 700; cursor: pointer; border: none; text-decoration: none; transition: transform .18s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-white { background: #fff; color: var(--green2); }
+    .btn-ghost { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.5); }
+    .btn-ghost:hover { border-color: #fff; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    .ftr { background: var(--brown); color: #fff; padding: 40px; text-align: center; }
+    .ftr span { font-size: .76rem; opacity: .45; }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      .hdr { padding: 0 24px; }
+      .hdr-nav { display: none; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--cream); padding: 16px 24px; border-bottom: 1px solid rgba(90,62,39,.1); gap: 4px; z-index: 99; }
+      .hdr-nav.open { display: flex; }
+      .hdr-burger { display: flex; }
+      .hero-copy { padding: 40px 24px; }
+      .process-step { grid-template-columns: 1fr; gap: 32px; }
+      .process-step.reverse { direction: ltr; }
+      .eq-grid { grid-template-columns: 1fr 1fr; }
+      .vid-grid { grid-template-columns: 1fr; }
+      .wrap { padding: 0 24px; }
+      .process { padding: 64px 0; }
+    }
+    @media (max-width: 560px) {
+      .eq-grid { grid-template-columns: 1fr; }
+      .media-pair { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hdr">
+  <a href="./index.html" class="hdr-logo">
+    <img src="./assets/Looped_Innovation_Logo.png" alt="Looped Innovation">
+  </a>
+  <nav class="hdr-nav" id="site-nav">
+    <a href="./index.html">Home</a>
+    <a href="./process.html" class="active">Process</a>
+    <a href="./pitch.html">Pitch</a>
+    <a class="nav-cta" href="https://loopedinnovation.com.ng/" target="_blank" rel="noopener noreferrer">Visit Website</a>
+  </nav>
+  <button class="hdr-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="./assets/process/ourfounderandfabricators.jpeg" alt="Blessing Ekwere and the fabrication team working on the NaturePacks equipment">
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">The Process & Equipment</p>
+      <h1>From Agricultural Waste to Packaging.</h1>
+      <p>Every NaturePacks product begins in the field and is engineered in our fabrication workshop — custom-built machinery, real fiber, real paper.</p>
+    </div>
+  </section>
+
+  <!-- PROCESS STEPS -->
+  <section class="process">
+    <div class="wrap">
+
+      <!-- STEP 1 -->
+      <div class="process-step">
+        <div class="step-copy">
+          <p class="step-num">Step 01 — Raw Material Collection</p>
+          <h2>Sourcing from the plantation.</h2>
+          <p>We collect banana and plantain fiber residues directly from local agricultural communities — the same stems and leaves that would otherwise be discarded as waste.</p>
+          <ul>
+            <li>Banana and plantain stems — high cellulose fiber content</li>
+            <li>Dried stem husks — processed for fiber extraction</li>
+            <li>Sourced from farms within local supply chain</li>
+            <li>Zero deforestation — purely agricultural residue</li>
+          </ul>
+        </div>
+        <div>
+          <div class="media-pair">
+            <div class="step-media"><img src="./assets/process/bananaleaf.jpeg" alt="Fresh banana leaf close-up showing natural fiber structure"></div>
+            <div class="step-media"><img src="./assets/process/driedbananastem.jpeg" alt="Dried banana stems collected and ready for processing"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="process-step reverse">
+        <div class="step-copy">
+          <p class="step-num">Step 02 — Pulping & Fiber Preparation</p>
+          <h2>Breaking down fibers into pulp.</h2>
+          <p>The dried stems are submerged and processed in our custom-fabricated metal basin — a heavy-duty pulping vat designed specifically for breaking down agricultural fibers into workable paper pulp.</p>
+          <ul>
+            <li>Custom welded steel basin chassis — designed in-house</li>
+            <li>Water-based pulping breaks down cellular fiber structure</li>
+            <li>Blending stage homogenizes fiber concentration</li>
+            <li>Pulp consistency controlled for sheet quality</li>
+          </ul>
+        </div>
+        <div class="step-media">
+          <img src="./assets/process/metalbasinchasis.jpeg" alt="Custom-fabricated metal pulping basin chassis being built at the fabrication workshop">
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="process-step">
+        <div class="step-copy">
+          <p class="step-num">Step 03 — Sheet Formation</p>
+          <h2>The deckle and mould.</h2>
+          <p>Pulp is poured over our branded Looped Innovation deckle — a hand-crafted wooden mould and deckle frame with a fine mesh screen that captures the fiber evenly, forming raw paper sheets.</p>
+          <ul>
+            <li>Wooden mould and deckle — Looped Innovation branded</li>
+            <li>Fine mesh screen captures uniform fiber layer</li>
+            <li>Sheet thickness controlled by pulp volume</li>
+            <li>Natural drainage removes excess water</li>
+          </ul>
+        </div>
+        <div>
+          <div class="media-pair">
+            <div class="step-media"><img src="./assets/process/thedecklealone.jpeg" alt="The Looped Innovation branded wooden deckle and mould frame"></div>
+            <div class="step-media"><img src="./assets/process/realtestpaper.jpeg" alt="Real NaturePacks test paper sheet produced in the field"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4 -->
+      <div class="process-step reverse">
+        <div class="step-copy">
+          <p class="step-num">Step 04 — Pressing & Drying</p>
+          <h2>Turning wet sheets into durable paper.</h2>
+          <p>Wet sheets are transferred to our custom-designed heated drying mechanism — a prototype chassis engineered with heating elements and clamp mechanisms to press and cure the paper to the required strength and thickness specification.</p>
+          <ul>
+            <li>Prototype heated drying chassis — custom engineered</li>
+            <li>Integrated heating elements for uniform curing</li>
+            <li>Clamp mechanisms apply controlled pressure</li>
+            <li>Mobile chassis on caster wheels for workshop flexibility</li>
+          </ul>
+        </div>
+        <div>
+          <div class="media-pair">
+            <div class="step-media"><img src="./assets/process/dryingmechanismprototypechasis.jpeg" alt="Drying mechanism prototype chassis — full view with caster wheels"></div>
+            <div class="step-media"><img src="./assets/process/dryingmechanismprototypechasis2.jpeg" alt="Drying mechanism chassis open — showing heating elements and clamp system"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 5 -->
+      <div class="process-step">
+        <div class="step-copy">
+          <p class="step-num">Step 05 — Output</p>
+          <h2>NaturePacks paper — tested and ready.</h2>
+          <p>The result is a uniform, durable natural fiber sheet — the raw material for all NaturePacks products. Each test batch confirms strength, texture, and consistency before going into product conversion.</p>
+          <ul>
+            <li>Uniform texture with visible natural fiber pattern</li>
+            <li>Moisture-resistant after curing</li>
+            <li>Cut and converted into bags, boxes, and sheets</li>
+            <li>Custom branded printing on finished products</li>
+          </ul>
+        </div>
+        <div class="step-media">
+          <img src="./assets/process/realtestpaper2artsyangle.jpeg" alt="NaturePacks real test paper sheet — artsy corner angle showing natural fiber texture">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EQUIPMENT -->
+  <section class="equipment">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Equipment Being Designed</p>
+        <h2>Custom-Built. Designed In-House.</h2>
+        <p>Every piece of equipment in the NaturePacks production line is being custom-fabricated specifically for processing banana and plantain agricultural fibers into packaging-grade paper.</p>
+      </div>
+      <div class="eq-grid">
+        <div class="eq-card">
+          <img src="./assets/process/metalbasinchasis.jpeg" alt="Metal pulping basin chassis">
+          <div class="eq-info">
+            <h3>Pulping Basin Chassis</h3>
+            <p>Heavy-gauge welded steel vat mounted on a structural chassis. Designed to hold fiber slurry for the pulping and blending stage of production.</p>
+            <span class="eq-tag">In Fabrication</span>
+          </div>
+        </div>
+        <div class="eq-card">
+          <img src="./assets/process/dryingmechanismprototypechasis.jpeg" alt="Drying mechanism prototype chassis">
+          <div class="eq-info">
+            <h3>Heated Drying Mechanism</h3>
+            <p>A prototype press-and-dry chassis with integrated heating elements, clamp locking mechanisms, and mobile caster wheels. Engineered for uniform sheet curing.</p>
+            <span class="eq-tag">Prototype Stage</span>
+          </div>
+        </div>
+        <div class="eq-card">
+          <img src="./assets/process/thedecklealone.jpeg" alt="The Looped Innovation branded wooden deckle">
+          <div class="eq-info">
+            <h3>Mould & Deckle Frame</h3>
+            <p>Branded wooden mould and deckle for manual sheet formation. Mesh screen surface captures fiber uniformly during the sheet-forming stage.</p>
+            <span class="eq-tag">Operational</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO SHOWCASE -->
+  <section class="videos">
+    <div class="wrap">
+      <div class="sec-head" style="text-align:center; margin-bottom:56px;">
+        <p class="eyebrow">In Action</p>
+        <h2 style="font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;color:var(--brown);margin-top:10px;">Watch the process.</h2>
+      </div>
+      <div class="vid-grid">
+        <div class="vid-card">
+          <video controls preload="metadata" poster="./assets/process/realtestpaper.jpeg">
+            <source src="./assets/process/sheetforming.mp4" type="video/mp4">
+          </video>
+          <div class="vid-info">
+            <h4>Sheet Formation</h4>
+            <p>Fiber pulp being formed into raw paper sheets using the mould and deckle.</p>
+          </div>
+        </div>
+        <div class="vid-card">
+          <video controls preload="metadata" poster="./assets/process/dryingmechanismprototypechasis.jpeg">
+            <source src="./assets/process/showingdryingmechanismchasisbehaviour.mp4" type="video/mp4">
+          </video>
+          <div class="vid-info">
+            <h4>Drying Mechanism Behaviour</h4>
+            <p>Demonstrating the clamp and press system of the prototype drying chassis.</p>
+          </div>
+        </div>
+        <div class="vid-card">
+          <video controls preload="metadata" poster="./assets/process/thedecklealone.jpeg">
+            <source src="./assets/process/thedecklevideo.mp4" type="video/mp4">
+          </video>
+          <div class="vid-info">
+            <h4>The Deckle</h4>
+            <p>The Looped Innovation branded mould and deckle frame in use during sheet forming.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready to order sustainable packaging?</h2>
+    <p>Visit our website or get in touch directly.</p>
+    <div class="cta-btns">
+      <a class="btn btn-white" href="https://loopedinnovation.com.ng/" target="_blank" rel="noopener noreferrer">Visit Looped Innovation</a>
+      <a class="btn btn-ghost" href="./pitch.html">See Our Pitch</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr">
+  <span>© 2026 Looped Innovation. All rights reserved.</span>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.querySelector('.hdr-burger');
+    var nav = document.querySelector('#site-nav');
+    if (!btn || !nav) return;
+    btn.addEventListener('click', function(){
+      var open = !nav.classList.contains('open');
+      nav.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+    });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ nav.classList.remove('open'); btn.setAttribute('aria-expanded','false'); });
+    });
+  })();
+</script>
+</body>
+</html>
