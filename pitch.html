@@ -200,35 +200,54 @@
     /* RESPONSIVE */
     @media (max-width: 1024px) {
       .team-grid { grid-template-columns: repeat(3,1fr); }
+      .tm-img { height: 260px; }
+      .prob-grid { grid-template-columns: 1fr 1fr; }
+      .pitch-img-row { grid-template-columns: repeat(3,1fr); }
     }
     @media (max-width: 860px) {
       .hdr { padding: 0 24px; }
       .hdr-nav { display: none; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0; background: var(--cream); padding: 16px 24px; border-bottom: 1px solid rgba(90,62,39,.1); gap: 4px; z-index: 99; }
       .hdr-nav.open { display: flex; }
       .hdr-burger { display: flex; }
-      .hero { padding: 64px 24px 56px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero { padding: 48px 24px 40px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
       .hero-img { display: none; }
-      .hero-stats { grid-template-columns: repeat(2,1fr); }
+      .hero-stats { grid-template-columns: repeat(2,1fr); gap: 0; }
       .prob-grid { grid-template-columns: 1fr; }
       .sol-wrap { grid-template-columns: 1fr; padding: 40px 28px; }
+      .sol-right { gap: 12px; }
       .prod-3 { grid-template-columns: 1fr 1fr; }
+      .prod-full { margin-bottom: 20px; }
       .pitch-img-row { grid-template-columns: 1fr; }
       .market-grid { grid-template-columns: 1fr; }
       .market-inner { padding: 0 24px; }
       .tract-grid { grid-template-columns: 1fr 1fr; }
       .biz-grid { grid-template-columns: 1fr; }
+      .biz-item { border-right: none; border-bottom: 1px solid rgba(90,62,39,.1); }
       .adv-grid { grid-template-columns: 1fr; }
-      .adv-card { border-right: none; }
+      .adv-card { border-right: none; border-bottom: 1px solid rgba(90,62,39,.1); }
       .team-grid { grid-template-columns: repeat(2,1fr); }
+      .tm-img { height: 240px; }
       .ask-uses { grid-template-columns: 1fr; }
+      .ask-wrap { padding: 64px 24px; }
       .wrap { padding: 0 24px; }
       .section { padding: 64px 0; }
+      .benefit-grid { grid-template-columns: 1fr 1fr; }
+      .benefit:nth-child(3n) { border-right: 1px solid rgba(90,62,39,.1); }
+      .benefit:nth-child(2n) { border-right: none; }
+      .hs { padding-right: 16px; }
     }
     @media (max-width: 560px) {
       .prod-3 { grid-template-columns: 1fr; }
       .tract-grid { grid-template-columns: 1fr 1fr; }
-      .hero-stats { grid-template-columns: repeat(2,1fr); }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .hs { border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); padding-bottom: 12px; margin-bottom: 12px; }
+      .team-grid { grid-template-columns: repeat(2,1fr); }
+      .tm-img { height: 200px; }
+      .benefit-grid { grid-template-columns: 1fr; }
+      .benefit:nth-child(2n) { border-right: none; }
+      .pitch-img-row { grid-template-columns: 1fr; }
+      .prob-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
