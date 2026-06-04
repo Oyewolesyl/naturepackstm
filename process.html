@@ -53,7 +53,7 @@
     }
     .hero-bg { position: absolute; inset: 0; }
     .hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
-    .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(30,18,6,.85) 0%, rgba(30,18,6,.2) 60%, transparent 100%); }
+    .hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(20,10,2,.92) 0%, rgba(20,10,2,.55) 50%, rgba(20,10,2,.25) 100%); }
     .hero-copy { position: relative; z-index: 1; padding: 56px 48px; color: #fff; }
     .hero-copy .eyebrow { color: var(--brown2); margin-bottom: 12px; }
     .hero-copy h1 { font-size: clamp(2.2rem,5vw,4rem); font-weight: 900; line-height: 1.1; letter-spacing: -.02em; max-width: 680px; }
@@ -78,7 +78,7 @@
     .step-copy li:last-child { border-bottom: none; }
 
     .step-media { border-radius: 20px; overflow: hidden; box-shadow: 0 16px 56px rgba(90,62,39,.2); }
-    .step-media img, .step-media video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .step-media img, .step-media video { width: 100%; height: 100%; object-fit: contain; background: #f0ede8; display: block; }
     .step-media video { max-height: 480px; background: #000; }
     .step-media img { max-height: 480px; }
 
@@ -94,7 +94,7 @@
 
     .eq-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
     .eq-card { background: rgba(255,255,255,.05); overflow: hidden; }
-    .eq-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform .4s; }
+    .eq-card img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #3a2412; display: block; transition: transform .4s; padding: 12px; }
     .eq-card:hover img { transform: scale(1.04); }
     .eq-info { padding: 24px 28px; }
     .eq-info h3 { font-size: 1rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
