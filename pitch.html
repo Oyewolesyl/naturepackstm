@@ -164,7 +164,8 @@
     .tm { background: var(--cream); text-align: center; overflow: hidden; }
     .tm-img { height: 280px; overflow: hidden; }
     .tm-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-    .tm.ceo .tm-img img { object-fit: cover; object-position: left top; }
+    .tm.ceo .tm-img { position: relative; }
+    .tm.ceo .tm-img img { position: absolute; top: 0; left: 0; height: 100%; width: auto; max-width: none; object-fit: unset; }
     .tm.techlead .tm-img img { object-fit: contain; background: #fff; object-position: center bottom; transform: scale(1.55); transform-origin: center bottom; }
     .tm-info { padding: 18px 14px 22px; }
     .tm-info h4 { font-size: .85rem; font-weight: 800; color: var(--brown); margin-bottom: 4px; }
