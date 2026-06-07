@@ -141,7 +141,7 @@
     .prod-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
     .pcard { border-radius: var(--r2); overflow: hidden; box-shadow: var(--sh); background: var(--cream); transition: transform .2s,box-shadow .2s; }
     .pcard:hover { transform: translateY(-5px); box-shadow: var(--sh2); }
-    .pcard img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .pcard img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #ede6db; padding: 16px; }
     .pcard-info { padding: 22px 24px; }
     .pcard-info h3 { font-size: 1rem; font-weight: 800; color: var(--brown); margin-bottom: 6px; }
     .pcard-info p  { font-size: .84rem; color: var(--brown3); }
