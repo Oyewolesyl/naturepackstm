@@ -166,7 +166,8 @@
     .tm-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
     .tm.ceo .tm-img { position: relative; }
     .tm.ceo .tm-img img { position: absolute; top: 0; left: 0; height: 100%; width: auto; max-width: none; object-fit: unset; }
-    .tm.techlead .tm-img img { object-fit: contain; background: #fff; object-position: center bottom; transform: scale(1.55); transform-origin: center bottom; }
+    .tm.techlead .tm-img { position: relative; background: #fff; }
+    .tm.techlead .tm-img img { position: absolute; left: 50%; bottom: 0; width: auto; height: 128%; max-width: none; transform: translateX(-50%); object-fit: unset; }
     .tm-info { padding: 18px 14px 22px; }
     .tm-info h4 { font-size: .85rem; font-weight: 800; color: var(--brown); margin-bottom: 4px; }
     .tm-info span { font-size: .68rem; color: var(--green); font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
@@ -538,7 +539,7 @@
   </section>
 
   <!-- TEAM -->
-  <section class="section">
+  <section class="section" id="team">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">The Team</p>
