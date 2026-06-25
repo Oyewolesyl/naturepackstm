@@ -76,17 +76,14 @@
     .hero-chip { position: absolute; background: rgba(8,8,6,.82); color: white; border-left: 4px solid var(--tan); padding: 10px 13px; border-radius: 0; font-size: .78rem; font-weight: 900; backdrop-filter: blur(10px); }
     .hero-chip.tl { left: 14px; top: 14px; }
     .hero-chip.br { right: 14px; bottom: 14px; }
-    .landing-float, .looped-float { position: absolute; z-index: 999999; pointer-events: auto; opacity: 1; filter: drop-shadow(0 18px 22px rgba(75,51,36,.24)); animation: drift 7s ease-in-out infinite; cursor: grab; touch-action: none; user-select: none; --x: 0px; --y: 0px; --r: 0deg; transform: translate(var(--x), var(--y)) rotate(var(--r)); }
+    .landing-float { position: absolute; z-index: 999999; pointer-events: auto; opacity: 1; filter: drop-shadow(0 18px 22px rgba(75,51,36,.24)); animation: drift 7s ease-in-out infinite; cursor: grab; touch-action: none; user-select: none; --x: 0px; --y: 0px; --r: 0deg; transform: translate(var(--x), var(--y)) rotate(var(--r)); }
     .landing-float img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; opacity: 1; }
-    .looped-float img { width: 100%; height: auto; object-fit: contain; pointer-events: none; opacity: 1; }
-    .looped-float span { color: var(--brown); font-size: .68rem; font-weight: 900; line-height: 1; }
-    .landing-float.f1 { width: 112px; left: 2%; top: 18%; --r: -10deg; animation-delay: -.6s; }
+            .landing-float.f1 { width: 112px; left: 2%; top: 18%; --r: -10deg; animation-delay: -.6s; }
     .landing-float.f2 { width: 92px; left: 42%; top: 8%; --r: 9deg; animation-delay: -2s; }
     .landing-float.f3 { width: 110px; right: 2%; top: 19%; --r: 8deg; animation-delay: -1.2s; }
     .landing-float.f4 { width: 98px; right: 31%; bottom: 11%; --r: -7deg; animation-delay: -3s; }
     .landing-float.f5 { width: 84px; left: 48%; bottom: 21%; --r: 11deg; animation-delay: -4s; opacity: 1; }
-    .looped-float { width: 132px; left: 18%; bottom: 28%; --r: -4deg; background: rgba(255,250,241,.9); border: 1px solid rgba(75,51,36,.12); border-radius: 8px; padding: 8px 10px; display: grid; gap: 2px; place-items: center; }
-    @keyframes drift {
+        @keyframes drift {
       0%, 100% { margin-top: 0; }
       50% { margin-top: -10px; }
     }
@@ -226,7 +223,7 @@
       .hero-visual { display: none; }
       .hero-mobile-visual { display: block; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); background: var(--black); }
       .hero-mobile-visual img { width: 100%; height: min(70vw, 340px); object-fit: cover; object-position: center 24%; }
-      .landing-float, .looped-float { z-index: 999999; opacity: 1; pointer-events: auto; }
+      .landing-float { z-index: 999999; opacity: 1; pointer-events: auto; }
       .landing-float.f1 { width: 48px; left: auto; right: 8px; top: 80px; }
       .landing-float.f2, .landing-float.f4 { display: block; }
       .landing-float.f3 { width: 54px; right: 4px; top: 48%; }
@@ -252,7 +249,7 @@
       .ftr-grid { grid-template-columns: 1fr; }
     }
 
-  
+
 
     /* NaturePacks visual system pass: sharper brand geometry, calmer spacing, no generic AI pills */
     body {
@@ -381,14 +378,155 @@
       .wrap, main > .wrap:first-child, .hero-inner, .market-inner { width: min(100% - 32px, 1160px); }
       .hdr-nav { background: var(--paper); }
       .hdr-nav .cta, .hdr-nav .nav-cta { margin-left: 0; }
-      .landing-float, .looped-float { opacity: 1; }
+      .landing-float { opacity: 1; }
     }
     @media (max-width: 620px) {
       .section, .process, .videos, .equipment, .mkt-wrap, .biz-wrap, .team-wrap, .market-wrap, .ask-wrap { padding: 66px 0; }
       .hero-stats .stat, .hero-stats .hs, .t-grid .tn, .tract-grid .tn { border-right: 0; border-bottom: 1px solid rgba(75,51,36,.14); }
     }
 
-  </style>
+
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .045;
+      background-image: url("./assets/brand/naturepacks-by-looped-floating.svg");
+      background-size: min(420px, 64vw) auto;
+      background-repeat: repeat;
+      background-position: 6vw 10vh;
+      transform: rotate(-4deg) scale(1.08);
+      transform-origin: center;
+    }
+    .brand-watermark {
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .08;
+      width: min(360px, 42vw);
+      height: 120px;
+      background: url("./assets/brand/naturepacks-by-looped-floating.svg") center / contain no-repeat;
+      filter: grayscale(.1);
+    }
+    .brand-watermark.bw-a { right: 4vw; top: 18%; transform: rotate(5deg); }
+    .brand-watermark.bw-b { left: 3vw; bottom: 12%; transform: rotate(-6deg); }
+    .section, .process, .videos, .equipment, .mkt-wrap, .biz-wrap, .team-wrap, .market-wrap, .ask-wrap, .prod-section, .products-section, .cta { position: relative; isolation: isolate; }
+
+
+/* final team and contrast polish */
+    .team-showcase {
+      display: grid;
+      grid-template-columns: minmax(300px, .9fr) minmax(0, 1.4fr);
+      gap: clamp(18px, 2.4vw, 34px);
+      align-items: stretch;
+    }
+    .team-lead {
+      background: #d1b789;
+      border: 1px solid rgba(75,51,36,.18);
+      display: grid;
+      grid-template-rows: minmax(380px, 1fr) auto;
+      min-height: 620px;
+    }
+    .team-lead .tm-img {
+      height: auto;
+      min-height: 430px;
+      background: #d1b789;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .team-lead .tm-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+    .team-lead .tm-info {
+      background: var(--paper2);
+      border-top: 1px solid rgba(75,51,36,.14);
+      padding: 26px;
+    }
+    .team-lead .tm-info p {
+      color: var(--earth);
+      margin: 12px 0 0;
+      max-width: 42ch;
+    }
+    .team-stack {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(14px, 1.8vw, 22px);
+    }
+    .team-stack .tm {
+      display: grid;
+      grid-template-rows: 300px auto;
+      min-height: 0;
+      border: 1px solid rgba(75,51,36,.16);
+      background: var(--paper2);
+      box-shadow: none;
+    }
+    .team-stack .tm-img {
+      height: 300px;
+      background: #d1b789;
+      overflow: hidden;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+    }
+    .team-stack .tm-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .team-stack .techlead .tm-img img {
+      object-position: center 34%;
+    }
+    .team-stack .tm:not(.techlead) .tm-img img[src*="productionmanager"],
+    .team-stack .tm:not(.techlead) .tm-img img[src*="finance"] {
+      object-fit: contain;
+      object-position: center bottom;
+      padding-top: 18px;
+    }
+    .team-stack .tm-info {
+      padding: 22px;
+      min-height: 126px;
+    }
+    .team-stack .tm-info h4,
+    .team-lead .tm-info h4 {
+      margin: 0 0 8px;
+      color: var(--brown);
+      font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+      line-height: 1.12;
+    }
+    .team-stack .tm-info span,
+    .team-lead .tm-info span {
+      color: var(--green);
+      font-size: .74rem;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .team-exp {
+      margin-top: 28px;
+    }
+    @media (max-width: 980px) {
+      .team-showcase { grid-template-columns: 1fr; }
+      .team-lead { min-height: 0; grid-template-rows: minmax(360px, auto) auto; }
+      .team-lead .tm-img { min-height: 360px; }
+    }
+    @media (max-width: 640px) {
+      .team-stack { grid-template-columns: 1fr; }
+      .team-stack .tm { grid-template-rows: 260px auto; }
+      .team-stack .tm-img { height: 260px; }
+      .team-lead .tm-img { min-height: 320px; }
+      .team-lead .tm-info, .team-stack .tm-info { padding: 18px; }
+    }
+
+</style>
 </head>
 <body>
 
@@ -409,6 +547,8 @@
 </header>
 
 <main id="top">
+  <div class="brand-watermark bw-a"></div>
+  <div class="brand-watermark bw-b"></div>
 
   <!-- HERO -->
   <div class="wrap">
@@ -418,7 +558,6 @@
       <div draggable="false" class="landing-float f3" aria-hidden="true"><img src="./assets/product-bag-front.png" alt=""></div>
       <div draggable="false" class="landing-float f4" aria-hidden="true"><img src="./assets/product-bag-open.png" alt=""></div>
       <div draggable="false" class="landing-float f5" aria-hidden="true"><img src="./assets/product-bag-side.png" alt=""></div>
-      <div class="looped-float" role="img" aria-label="by Looped Innovation"><span>by</span><img src="./assets/Looped_Innovation_Logo.png" alt="Looped Innovation"></div>
       <div class="hero-copy">
         <p class="eyebrow hero-country"><img src="./assets/nigeria-flag.svg" alt="Nigeria flag"> Sustainable Packaging</p>
         <h1><span class="hero-line">Double</span><span class="hero-line">Protection for</span><span class="hero-line"><em>Product &amp; Planet</em></span></h1>
@@ -714,32 +853,34 @@
   </section>
 
   <!-- TEAM -->
-  <section class="team-wrap" id="team">
+  <section class="team-wrap team-section" id="team">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">The Team</p>
-        <h2>The people who built NaturePacks from scratch.</h2>
+        <h2>Built by people who know the material, the market and the work.</h2>
       </div>
-      <div class="team-grid">
-        <div class="tm ceo">
+      <div class="team-showcase">
+        <article class="team-lead tm ceo">
           <div class="tm-img"><img src="./assets/ceo.png" alt="Blessing Ekwere, Founder and CEO"></div>
-          <div class="tm-info"><h4>Blessing Ekwere</h4><span>Founder / CEO</span></div>
-        </div>
-        <div class="tm techlead">
-          <div class="tm-img"><img src="./assets/people/dave-olaniyan-field.jpg" alt="Dave Olaniyan, Product Technical and Design Lead"></div>
-          <div class="tm-info"><h4>Dave Olaniyan</h4><span>Product Technical &amp; Design Lead</span></div>
-        </div>
-        <div class="tm">
-          <div class="tm-img"><img src="./assets/brandinganddesign.png" alt="Emmanuel Dolapo, Branding and Design"></div>
-          <div class="tm-info"><h4>Emmanuel Dolapo</h4><span>Branding and Design</span></div>
-        </div>
-        <div class="tm">
-          <div class="tm-img"><img src="./assets/productionmanager.png" alt="Adewale Adeyanju, Production Manager"></div>
-          <div class="tm-info"><h4>Adewale Adeyanju</h4><span>Production Manager</span></div>
-        </div>
-        <div class="tm">
-          <div class="tm-img"><img src="./assets/finance.png" alt="Okase Egbe, Finance"></div>
-          <div class="tm-info"><h4>Okase Egbe</h4><span>Finance</span></div>
+          <div class="tm-info"><h4>Blessing Ekwere</h4><span>Founder / CEO</span><p>Leads the circular packaging vision, from community recycling experience to a product Nigerian businesses can actually use.</p></div>
+        </article>
+        <div class="team-stack">
+          <article class="tm techlead">
+            <div class="tm-img"><img src="./assets/people/dave-olaniyan-field.jpg" alt="Dave Olaniyan, Product Technical and Design Lead"></div>
+            <div class="tm-info"><h4>Dave Olaniyan</h4><span>Product Technical &amp; Design Lead</span></div>
+          </article>
+          <article class="tm">
+            <div class="tm-img"><img src="./assets/brandinganddesign.png" alt="Emmanuel Dolapo, Branding and Design"></div>
+            <div class="tm-info"><h4>Emmanuel Dolapo</h4><span>Branding and Design</span></div>
+          </article>
+          <article class="tm">
+            <div class="tm-img"><img src="./assets/productionmanager.png" alt="Adewale Adeyanju, Production Manager"></div>
+            <div class="tm-info"><h4>Adewale Adeyanju</h4><span>Production Manager</span></div>
+          </article>
+          <article class="tm">
+            <div class="tm-img"><img src="./assets/finance.png" alt="Okase Egbe, Finance"></div>
+            <div class="tm-info"><h4>Okase Egbe</h4><span>Finance</span></div>
+          </article>
         </div>
       </div>
       <div class="team-exp">
@@ -873,7 +1014,7 @@
   })();
 
   function makeLandingAssetsMovable(){
-    var items = document.querySelectorAll('.landing-float, .looped-float');
+    var items = document.querySelectorAll('.landing-float');
     items.forEach(function(el){
       var startX = 0, startY = 0, baseX = 0, baseY = 0, active = false;
       function num(name){ return parseFloat(el.style.getPropertyValue(name)) || 0; }

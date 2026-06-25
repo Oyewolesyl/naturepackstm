@@ -251,7 +251,7 @@
       .ftr-grid { grid-template-columns: 1fr; }
     }
 
-  
+
 
     /* NaturePacks visual system pass: sharper brand geometry, calmer spacing, no generic AI pills */
     body {
@@ -380,12 +380,42 @@
       .wrap, main > .wrap:first-child, .hero-inner, .market-inner { width: min(100% - 32px, 1160px); }
       .hdr-nav { background: var(--paper); }
       .hdr-nav .cta, .hdr-nav .nav-cta { margin-left: 0; }
-      .landing-float, .looped-float { opacity: 1; }
+      .landing-float { opacity: 1; }
     }
     @media (max-width: 620px) {
       .section, .process, .videos, .equipment, .mkt-wrap, .biz-wrap, .team-wrap, .market-wrap, .ask-wrap { padding: 66px 0; }
       .hero-stats .stat, .hero-stats .hs, .t-grid .tn, .tract-grid .tn { border-right: 0; border-bottom: 1px solid rgba(75,51,36,.14); }
     }
+
+
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .045;
+      background-image: url("./assets/brand/naturepacks-by-looped-floating.svg");
+      background-size: min(420px, 64vw) auto;
+      background-repeat: repeat;
+      background-position: 6vw 10vh;
+      transform: rotate(-4deg) scale(1.08);
+      transform-origin: center;
+    }
+    .brand-watermark {
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .08;
+      width: min(360px, 42vw);
+      height: 120px;
+      background: url("./assets/brand/naturepacks-by-looped-floating.svg") center / contain no-repeat;
+      filter: grayscale(.1);
+    }
+    .brand-watermark.bw-a { right: 4vw; top: 18%; transform: rotate(5deg); }
+    .brand-watermark.bw-b { left: 3vw; bottom: 12%; transform: rotate(-6deg); }
+    .section, .process, .videos, .equipment, .mkt-wrap, .biz-wrap, .team-wrap, .market-wrap, .ask-wrap, .prod-section, .products-section, .cta { position: relative; isolation: isolate; }
 
   </style>
 </head>
@@ -406,11 +436,13 @@
 </header>
 
 <main>
+  <div class="brand-watermark bw-a"></div>
+  <div class="brand-watermark bw-b"></div>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg">
-      <img src="./assets/newnaturepacks/process/workshop-equipment-review.jpeg" alt="NaturePacks team reviewing custom workshop equipment">
+      <img src="./assets/newnaturepacks/process/drying-machine-workshop.jpeg" alt="NaturePacks workshop team working on custom process equipment">
     </div>
     <div class="hero-copy">
       <p class="eyebrow">The Process and Equipment</p>
@@ -499,7 +531,7 @@
         <div>
           <div class="media-pair">
             <div class="step-media"><img src="./assets/newnaturepacks/process/workshop-wheel-detail.jpeg" alt="Dave working on the drying mechanism chassis wheel detail"></div>
-            <div class="step-media"><img src="./assets/newnaturepacks/process/workshop-chassis-wiring.jpeg" alt="NaturePacks drying mechanism wiring and chassis detail"></div>
+            <div class="step-media"><img src="./assets/newnaturepacks/process/folded-paper-sample-red-floor.jpeg" alt="Folded NaturePacks banana-stem paper sample held above the workshop floor"></div>
           </div>
         </div>
       </div>

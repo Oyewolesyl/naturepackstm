@@ -247,7 +247,7 @@
       .ftr-grid { grid-template-columns: 1fr; }
     }
 
-  
+
 
     /* NaturePacks visual system pass: sharper brand geometry, calmer spacing, no generic AI pills */
     body {
@@ -376,14 +376,215 @@
       .wrap, main > .wrap:first-child, .hero-inner, .market-inner { width: min(100% - 32px, 1160px); }
       .hdr-nav { background: var(--paper); }
       .hdr-nav .cta, .hdr-nav .nav-cta { margin-left: 0; }
-      .landing-float, .looped-float { opacity: 1; }
+      .landing-float { opacity: 1; }
     }
     @media (max-width: 620px) {
       .section, .process, .videos, .equipment, .mkt-wrap, .biz-wrap, .team-wrap, .market-wrap, .ask-wrap { padding: 66px 0; }
       .hero-stats .stat, .hero-stats .hs, .t-grid .tn, .tract-grid .tn { border-right: 0; border-bottom: 1px solid rgba(75,51,36,.14); }
     }
 
-  </style>
+
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .045;
+      background-image: url("./assets/brand/naturepacks-by-looped-floating.svg");
+      background-size: min(420px, 64vw) auto;
+      background-repeat: repeat;
+      background-position: 6vw 10vh;
+      transform: rotate(-4deg) scale(1.08);
+      transform-origin: center;
+    }
+    .brand-watermark {
+      position: absolute;
+      z-index: 0;
+      pointer-events: none;
+      opacity: .08;
+      width: min(360px, 42vw);
+      height: 120px;
+      background: url("./assets/brand/naturepacks-by-looped-floating.svg") center / contain no-repeat;
+      filter: grayscale(.1);
+    }
+    .brand-watermark.bw-a { right: 4vw; top: 18%; transform: rotate(5deg); }
+    .brand-watermark.bw-b { left: 3vw; bottom: 12%; transform: rotate(-6deg); }
+    .section, .process, .videos, .equipment, .mkt-wrap, .biz-wrap, .team-wrap, .market-wrap, .ask-wrap, .prod-section, .products-section, .cta { position: relative; isolation: isolate; }
+
+
+/* final team and contrast polish */
+    .team-showcase {
+      display: grid;
+      grid-template-columns: minmax(300px, .9fr) minmax(0, 1.4fr);
+      gap: clamp(18px, 2.4vw, 34px);
+      align-items: stretch;
+    }
+    .team-lead {
+      background: #d1b789;
+      border: 1px solid rgba(75,51,36,.18);
+      display: grid;
+      grid-template-rows: minmax(380px, 1fr) auto;
+      min-height: 620px;
+    }
+    .team-lead .tm-img {
+      height: auto;
+      min-height: 430px;
+      background: #d1b789;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .team-lead .tm-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+    .team-lead .tm-info {
+      background: var(--paper2);
+      border-top: 1px solid rgba(75,51,36,.14);
+      padding: 26px;
+    }
+    .team-lead .tm-info p {
+      color: var(--earth);
+      margin: 12px 0 0;
+      max-width: 42ch;
+    }
+    .team-stack {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(14px, 1.8vw, 22px);
+    }
+    .team-stack .tm {
+      display: grid;
+      grid-template-rows: 300px auto;
+      min-height: 0;
+      border: 1px solid rgba(75,51,36,.16);
+      background: var(--paper2);
+      box-shadow: none;
+    }
+    .team-stack .tm-img {
+      height: 300px;
+      background: #d1b789;
+      overflow: hidden;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+    }
+    .team-stack .tm-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .team-stack .techlead .tm-img img {
+      object-position: center 34%;
+    }
+    .team-stack .tm:not(.techlead) .tm-img img[src*="productionmanager"],
+    .team-stack .tm:not(.techlead) .tm-img img[src*="finance"] {
+      object-fit: contain;
+      object-position: center bottom;
+      padding-top: 18px;
+    }
+    .team-stack .tm-info {
+      padding: 22px;
+      min-height: 126px;
+    }
+    .team-stack .tm-info h4,
+    .team-lead .tm-info h4 {
+      margin: 0 0 8px;
+      color: var(--brown);
+      font-size: clamp(1.1rem, 1.6vw, 1.45rem);
+      line-height: 1.12;
+    }
+    .team-stack .tm-info span,
+    .team-lead .tm-info span {
+      color: var(--green);
+      font-size: .74rem;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .team-exp {
+      margin-top: 28px;
+    }
+    @media (max-width: 980px) {
+      .team-showcase { grid-template-columns: 1fr; }
+      .team-lead { min-height: 0; grid-template-rows: minmax(360px, auto) auto; }
+      .team-lead .tm-img { min-height: 360px; }
+    }
+    @media (max-width: 640px) {
+      .team-stack { grid-template-columns: 1fr; }
+      .team-stack .tm { grid-template-rows: 260px auto; }
+      .team-stack .tm-img { height: 260px; }
+      .team-lead .tm-img { min-height: 320px; }
+      .team-lead .tm-info, .team-stack .tm-info { padding: 18px; }
+    }
+
+
+/* final pitch contrast corrections */
+    .pitch-hero {
+      background: var(--black);
+      color: white;
+    }
+    .pitch-hero .hero-left .eyebrow {
+      color: var(--tan) !important;
+    }
+    .pitch-hero .hero-left h1 {
+      color: #fffaf1 !important;
+    }
+    .pitch-hero .hero-left h1 span {
+      color: #8da33c !important;
+    }
+    .pitch-hero .hero-left p {
+      color: rgba(255,255,255,.76) !important;
+    }
+    .pitch-hero .hero-stats .hs {
+      background: rgba(255,255,255,.08) !important;
+      border-color: rgba(255,255,255,.18) !important;
+    }
+    .pitch-hero .hero-stats .hs strong {
+      color: #fffaf1 !important;
+    }
+    .pitch-hero .hero-stats .hs span {
+      color: rgba(255,255,255,.72) !important;
+    }
+    .pitch-why .sol-wrap {
+      background: var(--black) !important;
+      color: white !important;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .pitch-why .sol-left h2,
+    .pitch-why .sol-left p,
+    .pitch-why .sol-item h4,
+    .pitch-why .sol-item p {
+      color: inherit !important;
+    }
+    .pitch-why .sol-left p,
+    .pitch-why .sol-item p {
+      color: rgba(255,255,255,.74) !important;
+    }
+    .pitch-why .sol-item,
+    .market-wrap .drivers li,
+    .ask-wrap .ask-use {
+      background: rgba(255,255,255,.08) !important;
+      border: 1px solid rgba(255,255,255,.16) !important;
+      color: rgba(255,255,255,.82) !important;
+    }
+    .market-wrap .drivers li {
+      font-weight: 850;
+    }
+    .ask-wrap .ask-use h4 {
+      color: #fffaf1 !important;
+    }
+    .ask-wrap .ask-use p {
+      color: rgba(255,255,255,.72) !important;
+    }
+
+</style>
 </head>
 <body>
 
@@ -402,9 +603,11 @@
 </header>
 
 <main>
+  <div class="brand-watermark bw-a"></div>
+  <div class="brand-watermark bw-b"></div>
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="hero pitch-hero">
     <div class="hero-inner">
       <div class="hero-left">
         <p class="eyebrow">Looped Innovation Investor Pitch</p>
@@ -467,7 +670,7 @@
   </div>
 
   <!-- WHY IT MATTERS -->
-  <section class="section" style="padding-top:48px;">
+  <section class="section pitch-why" style="padding-top:48px;">
     <div class="wrap">
       <div class="sol-wrap">
         <div class="sol-left">
@@ -669,32 +872,34 @@
   </section>
 
   <!-- TEAM -->
-  <section class="section" id="team">
+  <section class="section team-section" id="team">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">The Team</p>
-        <h2>A practical team with the skills to build, sell and deliver.</h2>
+        <h2>Builders, operators and brand people around one practical product.</h2>
       </div>
-      <div class="team-grid">
-        <div class="tm ceo">
+      <div class="team-showcase">
+        <article class="team-lead tm ceo">
           <div class="tm-img"><img src="./assets/ceo.png" alt="Blessing Ekwere, Founder and CEO"></div>
-          <div class="tm-info"><h4>Blessing Ekwere</h4><span>Founder / CEO</span></div>
-        </div>
-        <div class="tm techlead">
-          <div class="tm-img"><img src="./assets/people/dave-olaniyan-field.jpg" alt="Dave Olaniyan, Product Technical and Design Lead"></div>
-          <div class="tm-info"><h4>Dave Olaniyan</h4><span>Technical &amp; Product Lead</span></div>
-        </div>
-        <div class="tm">
-          <div class="tm-img"><img src="./assets/brandinganddesign.png" alt="Emmanuel Dolapo, Branding and Design"></div>
-          <div class="tm-info"><h4>Emmanuel Dolapo</h4><span>Branding &amp; Design</span></div>
-        </div>
-        <div class="tm">
-          <div class="tm-img"><img src="./assets/productionmanager.png" alt="Adewale Adeyanju, Production Manager"></div>
-          <div class="tm-info"><h4>Adewale Adeyanju</h4><span>Production Manager</span></div>
-        </div>
-        <div class="tm">
-          <div class="tm-img"><img src="./assets/finance.png" alt="Okase Egbe, Finance"></div>
-          <div class="tm-info"><h4>Okase Egbe</h4><span>Finance</span></div>
+          <div class="tm-info"><h4>Blessing Ekwere</h4><span>Founder / CEO</span><p>Brings recycling operations, community work and the commercial push behind NaturePacks.</p></div>
+        </article>
+        <div class="team-stack">
+          <article class="tm techlead">
+            <div class="tm-img"><img src="./assets/people/dave-olaniyan-field.jpg" alt="Dave Olaniyan, Product Technical and Design Lead"></div>
+            <div class="tm-info"><h4>Dave Olaniyan</h4><span>Technical &amp; Product Lead</span></div>
+          </article>
+          <article class="tm">
+            <div class="tm-img"><img src="./assets/brandinganddesign.png" alt="Emmanuel Dolapo, Branding and Design"></div>
+            <div class="tm-info"><h4>Emmanuel Dolapo</h4><span>Branding &amp; Design</span></div>
+          </article>
+          <article class="tm">
+            <div class="tm-img"><img src="./assets/productionmanager.png" alt="Adewale Adeyanju, Production Manager"></div>
+            <div class="tm-info"><h4>Adewale Adeyanju</h4><span>Production Manager</span></div>
+          </article>
+          <article class="tm">
+            <div class="tm-img"><img src="./assets/finance.png" alt="Okase Egbe, Finance"></div>
+            <div class="tm-info"><h4>Okase Egbe</h4><span>Finance</span></div>
+          </article>
         </div>
       </div>
     </div>
