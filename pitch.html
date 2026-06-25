@@ -3,26 +3,31 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="NaturePacks pitch page for sustainable packaging made from banana and plantain stem fibre by Looped Innovation." />
+  <meta name="theme-color" content="#687527" />
   <title>Our Pitch | NaturePacks™ by Looped Innovation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800;9..144,900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --brown:  #5A3E27;
-      --brown2: #C1A38B;
-      --brown3: #9F8070;
-      --cream:  #F8F4F0;
-      --green:  #687527;
-      --green2: #4a5618;
+      --brown:  #4B3628;
+      --brown2: #D2B48C;
+      --brown3: #80634F;
+      --cream:  #F5EFE6;
+      --green:  #566B2D;
+      --green2: #2E4A20;
       --white:  #ffffff;
-      --text:   #2b1e10;
+      --text:   #231B14;
+      --font-body: 'Manrope', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-display: 'Fraunces', Georgia, serif;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Poppins', sans-serif; background: var(--cream); color: var(--text); line-height: 1.65; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { overflow-x: hidden; font-family: var(--font-body); background: var(--cream); color: var(--text); line-height: 1.65; }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
+    h1, h2, h3, .sec-head h2, .hero-copy h1, .hero-left h1, .cta-inner h2, .ask-inner h2 { font-family: var(--font-display); letter-spacing: -.015em; }
     .wrap { max-width: 1200px; margin-inline: auto; padding: 0 40px; }
     .eyebrow { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--green); }
 
@@ -31,15 +36,12 @@
       position: sticky; top: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 48px; height: 68px;
-      background: rgba(248,244,240,.96); backdrop-filter: blur(12px);
+      background: rgba(245,239,230,.96); backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(90,62,39,.08);
     }
-    .hdr-logo { display: flex; flex-direction: column; line-height: 1.15; }
-    .hdr-logo .np { font-size: 1.25rem; font-weight: 900; letter-spacing: -.01em; }
-    .hdr-logo .np .n { color: var(--brown); }
-    .hdr-logo .np .p { color: var(--green); }
-    .hdr-logo .np sup { font-size: .5em; color: var(--brown); }
-    .hdr-logo .sub { font-size: .6rem; font-weight: 500; color: var(--brown3); letter-spacing: .04em; }
+    .hdr-logo { flex: 0 0 auto; display: inline-flex; align-items: center; min-width: 0; }
+    .hdr-logo img { width: 128px; max-height: 48px; height: auto; display: block; }
+    .ftr-logo img { width: 190px; height: auto; display: block; }
     .hdr-nav { display: flex; align-items: center; gap: 4px; }
     .hdr-nav a { font-size: .84rem; font-weight: 500; color: var(--brown); padding: 7px 14px; border-radius: 100px; transition: background .15s; }
     .hdr-nav a:hover, .hdr-nav a.active { background: rgba(90,62,39,.08); }
@@ -48,7 +50,7 @@
     .hdr-burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
     .hdr-burger span { display: block; width: 24px; height: 2px; background: var(--brown); border-radius: 2px; }
 
-    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 36px; border-radius: 100px; font-family: inherit; font-size: .95rem; font-weight: 700; cursor: pointer; border: none; text-decoration: none; transition: transform .18s, box-shadow .18s; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 36px; border-radius: 100px; font-family: var(--font-body); font-size: .92rem; letter-spacing: .01em; font-weight: 700; cursor: pointer; border: none; text-decoration: none; transition: transform .18s, box-shadow .18s; }
     .btn:hover { transform: translateY(-2px); }
     .btn-green { background: var(--green); color: #fff; }
     .btn-green:hover { background: var(--green2); }
@@ -70,7 +72,7 @@
     .hs strong { display: block; font-size: 2rem; font-weight: 900; color: var(--brown2); }
     .hs span { font-size: .76rem; opacity: .6; }
     .hero-img { border-radius: 20px; overflow: hidden; box-shadow: 0 24px 64px rgba(0,0,0,.3); }
-    .hero-img img { width: 100%; object-fit: cover; }
+    .hero-img img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 24%; }
 
     /* SECTION STYLES */
     .section { padding: 96px 0; }
@@ -99,10 +101,10 @@
 
     /* PRODUCT */
     .prod-full { border-radius: 20px; overflow: hidden; margin-bottom: 32px; box-shadow: 0 16px 56px rgba(90,62,39,.2); }
-    .prod-full img { width: 100%; max-height: 500px; object-fit: cover; }
+    .prod-full img { width: 100%; max-height: 500px; object-fit: cover; object-position: center 48%; }
     .prod-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
     .prod-card { border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 4px 24px rgba(90,62,39,.1); }
-    .prod-card img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #ede6db; padding: 16px; }
+    .prod-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: #ede6db; padding: 0; }
     .prod-info { padding: 20px 22px; }
     .prod-info h4 { font-size: .95rem; font-weight: 800; color: var(--brown); margin-bottom: 6px; }
     .prod-info p { font-size: .82rem; color: var(--brown3); }
@@ -200,6 +202,10 @@
     .ftr span { font-size: .76rem; opacity: .45; }
 
     /* RESPONSIVE */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+
     @media (max-width: 1024px) {
       .team-grid { grid-template-columns: repeat(3,1fr); }
       .tm-img { height: 260px; }
@@ -212,7 +218,7 @@
       .hdr-nav.open { display: flex; }
       .hdr-burger { display: flex; }
       .hero { padding: 48px 24px 40px; }
-      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .hero-inner { grid-template-columns: minmax(0,1fr); gap: 32px; }
       .hero-img { display: none; }
       .hero-stats { grid-template-columns: repeat(2,1fr); gap: 0; }
       .prob-grid { grid-template-columns: 1fr; }
@@ -240,6 +246,7 @@
       .hs { padding-right: 16px; }
     }
     @media (max-width: 560px) {
+      .hero-left h1 { font-size: clamp(2rem, 9vw, 2.55rem); line-height: 1.08; max-width: 100%; }
       .prod-3 { grid-template-columns: 1fr; }
       .tract-grid { grid-template-columns: 1fr 1fr; }
       .hero-stats { grid-template-columns: 1fr 1fr; }
@@ -256,10 +263,7 @@
 <body>
 
 <header class="hdr">
-  <a href="./index.html" class="hdr-logo">
-    <div class="np"><span class="n">Nature</span><span class="p">Packs</span><sup>™</sup></div>
-    <span class="sub">by Looped Innovation</span>
-  </a>
+  <a href="./index.html" class="hdr-logo" aria-label="NaturePacks by Looped Innovation"><img src="./assets/brand/naturepacks-by-looped.svg" alt="NaturePacks by Looped Innovation"></a>
   <nav class="hdr-nav" id="site-nav">
     <a href="./index.html">Home</a>
     <a href="./process.html">Process</a>
@@ -278,20 +282,20 @@
     <div class="hero-inner">
       <div class="hero-left">
         <p class="eyebrow">Looped Innovation Investor Pitch</p>
-        <h1>Packaging that protects <span>Products</span> and <span>the Planet.</span></h1>
+        <h1>Packaging that protects <span>products</span> and <span>the planet.</span></h1>
         <p>We turn banana and plantain waste into strong, practical packaging for Nigerian MSMEs. It protects the product, respects the planet and gives farm waste a second life.</p>
         <div class="hero-btns">
           <a class="btn btn-white" href="https://loopedinnovation.com.ng/" target="_blank" rel="noopener noreferrer">Visit Website</a>
           <a class="btn btn-ghost" href="#ask">Our Ask</a>
         </div>
         <div class="hero-stats">
-          <div class="hs"><strong class="countup" data-target="20000" data-suffix="K+">20K+</strong><span>Units Delivered</span></div>
+          <div class="hs"><strong class="countup" data-target="20" data-suffix="K+">20K+</strong><span>Units Delivered</span></div>
           <div class="hs"><strong class="countup" data-target="100" data-suffix="+">100+</strong><span>MSME Customers</span></div>
-          <div class="hs"><strong>₦960B</strong><span>Market Size</span></div>
+          <div class="hs"><strong>&#8358;960B</strong><span>Market Size</span></div>
         </div>
       </div>
       <div class="hero-img">
-        <img src="./assets/stem.png" alt="NaturePacks product packaging with the Double Protection for Product and Planet message">
+        <img src="./assets/newnaturepacks/founder-product-lead-paper.jpeg" alt="Founder and product technical lead holding NaturePacks banana-stem paper">
       </div>
     </div>
   </section>
@@ -307,7 +311,7 @@
       <div class="pitch-img-row">
         <div class="pitch-img"><img src="./assets/plasticwaste.jpg" alt="Plastic waste pollution"></div>
         <div class="pitch-img"><img src="./assets/stems.png" alt="Banana plantation stems used as the raw agricultural source"></div>
-        <div class="pitch-img"><img src="./assets/paper.png" alt="NaturePacks natural fiber material texture"></div>
+        <div class="pitch-img"><img src="./assets/newnaturepacks/banana-stem-paper-sheet.jpeg" alt="NaturePacks banana-stem paper texture"></div>
       </div>
       <div class="prob-grid">
         <div class="prob-card">
@@ -332,7 +336,7 @@
   <!-- FOUNDER IMAGE -->
   <div style="max-width:1200px;margin-inline:auto;padding:0 40px 0;">
     <div style="border-radius:20px;overflow:hidden;box-shadow:0 16px 56px rgba(90,62,39,.2);">
-      <img src="./assets/process/ourfounderandfabricators.jpeg" alt="Blessing Ekwere and the fabrication team" style="width:100%;max-height:480px;object-fit:cover;display:block;object-position:center 30%;">
+      <img src="./assets/newnaturepacks/process/drying-machine-workshop.jpeg" alt="NaturePacks process equipment workshop" style="width:100%;max-height:480px;object-fit:cover;display:block;object-position:center 45%;">
     </div>
   </div>
 
@@ -394,19 +398,19 @@
         <h2>Packaging built for real MSME needs.</h2>
       </div>
       <div class="prod-full">
-        <img src="./assets/LOOPEDPRODUCR.png" alt="Full NaturePacks product range">
+        <img src="./assets/newnaturepacks/naturepacks-merch-wide.jpeg" alt="NaturePacks brand applications across caps and shirts">
       </div>
       <div class="prod-3">
         <div class="prod-card">
-          <img src="./assets/finalproduxts_4.png" alt="NaturePacks paper bag">
+          <img src="./assets/newnaturepacks/banana-stem-paper-handheld.jpeg" alt="Handheld NaturePacks material sheet">
           <div class="prod-info"><h4>Paper Bags</h4><p>Strong banana fibre bags in useful sizes, with twisted rope handles or flat handles.</p></div>
         </div>
         <div class="prod-card">
-          <img src="./assets/finalproduxts_1.png" alt="NaturePacks branded bag">
+          <img src="./assets/newnaturepacks/naturepacks-merch-portrait.jpeg" alt="NaturePacks merchandise wordmark application">
           <div class="prod-info"><h4>Branded Bags</h4><p>Brand names, logos and messages printed directly on the natural fibre material.</p></div>
         </div>
         <div class="prod-card">
-          <img src="./assets/finalproduxts.png" alt="NaturePacks full range">
+          <img src="./assets/newnaturepacks/banana-stem-paper-sheet.jpeg" alt="NaturePacks banana-stem paper sheet">
           <div class="prod-info"><h4>Custom Eco-Packaging</h4><p>Boxes, sheets and custom formats made for small business orders and repeat supply.</p></div>
         </div>
       </div>
@@ -418,21 +422,21 @@
     <div class="market-inner">
       <div class="sec-head">
         <p class="eyebrow">Market Size</p>
-        <h2>A ₦960 billion market is ready for better packaging.</h2>
+        <h2>A &#8358;960 billion market is ready for better packaging.</h2>
         <p>Nigeria already has the demand. The opportunity is to serve that demand with packaging that is local, strong and more responsible.</p>
       </div>
       <div class="market-grid">
         <div class="m-bars">
           <div class="m-row">
-            <div class="m-lbl"><strong>₦960B</strong><span>TAM</span></div>
+            <div class="m-lbl"><strong>&#8358;960B</strong><span>TAM</span></div>
             <div class="m-bar tam">Total Addressable Market</div>
           </div>
           <div class="m-row">
-            <div class="m-lbl"><strong>₦96B</strong><span>SAM</span></div>
+            <div class="m-lbl"><strong>&#8358;96B</strong><span>SAM</span></div>
             <div class="m-bar sam">Serviceable Market</div>
           </div>
           <div class="m-row">
-            <div class="m-lbl"><strong>₦96M</strong><span>SOM</span></div>
+            <div class="m-lbl"><strong>&#8358;96M</strong><span>SOM</span></div>
             <div class="m-bar som">Initial Target</div>
           </div>
         </div>
@@ -468,10 +472,10 @@
         <h2>Real traction in the Nigerian market.</h2>
       </div>
       <div class="tract-grid">
-        <div class="tn"><strong class="countup" data-target="20000" data-suffix="K+">20K+</strong><span>Packaging units delivered</span></div>
+        <div class="tn"><strong class="countup" data-target="20" data-suffix="K+">20K+</strong><span>Packaging units delivered</span></div>
         <div class="tn"><strong class="countup" data-target="100" data-suffix="+">100+</strong><span>Active MSME customers</span></div>
-        <div class="tn"><strong>2026</strong><span>Material testing completed</span></div>
-        <div class="tn"><strong>₦960B</strong><span>Total market opportunity</span></div>
+        <div class="tn"><strong>Tested</strong><span>Material performance validated</span></div>
+        <div class="tn"><strong>&#8358;960B</strong><span>Total market opportunity</span></div>
       </div>
       <div class="loopedstand-img">
         <img src="./assets/loopedstand.png" alt="Looped Innovation at an exhibition with the NaturePacks display stand">
@@ -605,6 +609,7 @@
 </main>
 
 <footer class="ftr">
+  <div class="simple-ftr-logo"><img src="./assets/brand/naturepacks-white-color.svg" alt="NaturePacks"></div>
   <span>© 2026 Looped Innovation. All rights reserved.</span>
   <span>NaturePacks™ | Double Protection for Product and Planet</span>
 </footer>
