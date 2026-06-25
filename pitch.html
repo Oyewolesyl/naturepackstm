@@ -71,7 +71,7 @@
     .hero-visual { position: relative; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); background: var(--black); }
     .hero-visual img { width: 100%; height: min(68vh, 650px); min-height: 470px; object-fit: cover; object-position: center 26%; }
     .hero-mobile-visual { display: none; }
-    .hero-chip { position: absolute; background: rgba(8,8,6,.82); color: white; border: 1px solid rgba(255,255,255,.16); padding: 10px 13px; border-radius: 5px; font-size: .78rem; font-weight: 900; backdrop-filter: blur(10px); }
+    .hero-chip { position: absolute; background: rgba(8,8,6,.82); color: white; border-left: 4px solid var(--tan); padding: 10px 13px; border-radius: 0; font-size: .78rem; font-weight: 900; backdrop-filter: blur(10px); }
     .hero-chip.tl { left: 14px; top: 14px; }
     .hero-chip.br { right: 14px; bottom: 14px; }
     .landing-float { position: absolute; z-index: -1; pointer-events: none; opacity: .9; filter: drop-shadow(0 18px 22px rgba(75,51,36,.18)); animation: drift 7s ease-in-out infinite; }
@@ -132,7 +132,7 @@
     .pcard-info, .prod-info { padding: 22px; }
     .pcard-info h3, .prod-info h4 { color: var(--brown); font-size: 1.05rem; font-weight: 950; margin-bottom: 8px; }
     .pcard-info p, .prod-info p { color: var(--earth); font-size: .87rem; }
-    .ptag, .seg-tag, .badge, .eq-tag, .benefit { display: inline-flex; width: fit-content; margin-top: 12px; border-radius: 5px; background: rgba(101,122,40,.12); color: var(--green2); padding: 5px 10px; font-size: .72rem; font-weight: 900; }
+    .ptag, .seg-tag, .badge, .eq-tag, .benefit { display: inline-flex; width: fit-content; margin-top: 12px; border-radius: 0; background: transparent; color: var(--green2); padding: 4px 0 4px 10px; border-left: 4px solid var(--green); font-size: .72rem; font-weight: 950; letter-spacing: .03em; }
     .how-banner img { width: 100%; height: clamp(210px, 32vw, 390px); object-fit: cover; }
     .how-grid, .benefit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
     .hc { background: var(--paper2); border-radius: 6px; padding: 24px; border-top: 4px solid var(--green); }
@@ -140,8 +140,8 @@
     .hc h3 { font-size: 1.07rem; font-weight: 950; margin: 14px 0 8px; }
     .hc p { color: var(--earth); font-size: .86rem; }
     .hc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
-    .hc-tags span { background: rgba(101,122,40,.12); color: var(--green2); border-radius: 5px; padding: 4px 8px; font-size: .7rem; font-weight: 900; }
-    .badges, .seg-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .hc-tags span { background: transparent; color: var(--green2); border-radius: 0; padding: 3px 0 3px 9px; border-left: 3px solid var(--green); font-size: .7rem; font-weight: 950; }
+    .badges, .seg-tags { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 16px; align-items: flex-start; }
     .mkt-wrap { background: var(--black); }
     .mkt-wrap .sec-head h2, .mkt-wrap h3, .market-wrap h4 { color: white; }
     .mkt-wrap .sec-head p, .m-copy, .drivers li { color: rgba(255,255,255,.7); }
@@ -152,15 +152,15 @@
     .m-bar { min-height: 54px; border-radius: 5px; display: flex; align-items: center; padding: 0 16px; color: white; font-weight: 900; background: var(--green); }
     .m-bar.sam { width: 72%; background: #7d5a3d; }
     .m-bar.som { width: 38%; background: #c8ab82; color: var(--ink); }
-    .nigeria-market { display: flex; align-items: center; gap: 12px; width: fit-content; margin-bottom: 20px; padding: 10px 13px; border-radius: 6px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); color: white; font-weight: 950; }
+    .nigeria-market { display: flex; align-items: center; gap: 12px; width: fit-content; margin-bottom: 20px; padding: 10px 0 10px 14px; border-radius: 0; background: transparent; border-left: 4px solid var(--tan); color: white; font-weight: 950; }
     .nigeria-market img { width: 46px; height: 30px; object-fit: cover; border-radius: 3px; box-shadow: 0 0 0 1px rgba(255,255,255,.25); }
     .nigeria-market span { color: var(--tan); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
     .team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
     .tm { background: #efe0ca; border-radius: 8px; overflow: hidden; min-width: 0; box-shadow: 0 10px 32px rgba(42,26,14,.1); }
     .tm-img { height: 305px; display: grid; place-items: end center; overflow: hidden; background: linear-gradient(180deg, #d0b68c, #f4eadb); }
     .tm-img img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
-    .tm.techlead .tm-img { background: var(--black); }
-    .tm.techlead .tm-img img { object-fit: contain; padding: 0; width: 150%; height: 150%; transform: translateY(13%); transform-origin: center bottom; }
+    .tm.techlead .tm-img { background: linear-gradient(180deg, #d0b68c, #f4eadb); }
+    .tm.techlead .tm-img img { object-fit: cover; object-position: center 28%; width: 100%; height: 100%; padding: 0; transform: none; }
     .tm.ceo .tm-img img { object-fit: contain; object-position: center bottom; }
     .tm-info { padding: 18px; border-top: 1px solid rgba(75,51,36,.1); background: var(--paper2); min-height: 100px; }
     .tm-info h4 { color: var(--brown); font-size: 1.05rem; font-weight: 950; margin-bottom: 5px; }
@@ -247,16 +247,153 @@
       .ftr-grid { grid-template-columns: 1fr; }
     }
 
+  
+
+    /* NaturePacks visual system pass: sharper brand geometry, calmer spacing, no generic AI pills */
+    body {
+      background:
+        linear-gradient(rgba(244,234,219,.94), rgba(244,234,219,.94)),
+        url("./assets/paper.png") center / 340px auto repeat;
+    }
+    .wrap { width: min(1160px, calc(100% - 48px)); }
+    .section, .process, .videos, .equipment, .mkt-wrap, .biz-wrap, .team-wrap, .market-wrap, .ask-wrap { padding: clamp(76px, 9vw, 124px) 0; }
+    .hdr {
+      height: 78px;
+      background: rgba(244,234,219,.97);
+      border-bottom: 2px solid rgba(75,51,36,.16);
+      backdrop-filter: none;
+    }
+    .hdr-logo img { width: 150px; max-height: 48px; }
+    .hdr-nav { gap: 2px; }
+    .hdr-nav a {
+      border-radius: 0;
+      padding: 10px 12px;
+      font-size: .82rem;
+      letter-spacing: .01em;
+    }
+    .hdr-nav a:hover, .hdr-nav a.active {
+      background: transparent;
+      color: var(--green2);
+      box-shadow: inset 0 -3px 0 var(--green);
+    }
+    .hdr-nav .cta, .hdr-nav .nav-cta {
+      border-radius: 0;
+      background: var(--black);
+      color: white;
+      box-shadow: none;
+      margin-left: 8px;
+    }
+    .btn {
+      border-radius: 0;
+      min-height: 52px;
+      box-shadow: none;
+      letter-spacing: .01em;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-green, .nav-cta, .hdr-nav .cta { background: var(--green); }
+    .btn-outline, .btn-ghost { border-width: 2px; }
+    .sec-head { margin-bottom: clamp(34px, 5vw, 58px); }
+    .sec-head h2 { letter-spacing: 0; }
+    .hero-copy { gap: 26px; }
+    .hero-copy h1, .hero-left h1 {
+      letter-spacing: 0;
+      text-wrap: balance;
+    }
+    .hero-stats, .band-stats, .t-grid, .tract-grid {
+      border: 2px solid rgba(75,51,36,.18);
+      gap: 0;
+      background: transparent;
+    }
+    .stat, .hs, .band-stat, .tn {
+      border-right: 1px solid rgba(75,51,36,.14);
+      background: rgba(255,250,241,.72);
+    }
+    .band-stat, .equipment .tn, .market-wrap .tn { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.12); }
+    .hero-visual, .hero-mobile-visual, .prob-img, .mat-img, .prod-hero, .how-banner, .tract-img, .loopedstand-img, .prod-full, .pitch-img, .step-media, .process-media, .tm, .pcard, .prod-card, .eq-card, .vid-card, .work-grid figure {
+      border-radius: 0;
+      box-shadow: none;
+      border: 1px solid rgba(75,51,36,.16);
+    }
+    .hero-visual img, .hero-img img { object-position: center 31%; }
+    .pc, .vc, .adv, .bz, .prob-card, .adv-card, .biz-item, .ask-use, .sol-item, .benefit, .hc {
+      border-radius: 0;
+      box-shadow: none;
+      border: 1px solid rgba(75,51,36,.16);
+      border-top: 5px solid var(--green);
+      background: rgba(255,250,241,.76);
+      padding: clamp(22px, 3vw, 34px);
+    }
+    .sol, .sol-wrap {
+      border-radius: 0;
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: none;
+    }
+    .sc, .sol-item {
+      border-radius: 0;
+      border-left: 5px solid var(--tan);
+      background: rgba(255,255,255,.055);
+    }
+    .prod-grid, .prod-3, .prob-cards, .val-grid, .adv-grid, .biz-grid, .prob-grid, .eq-grid, .vid-grid, .ask-uses, .how-grid, .benefit-grid, .team-grid {
+      gap: clamp(14px, 2vw, 22px);
+    }
+    .prod-hero, .prod-full {
+      background:
+        linear-gradient(rgba(255,250,241,.72), rgba(255,250,241,.72)),
+        url("./assets/paper.png") center / 260px auto repeat;
+    }
+    .prod-hero img, .prod-full img, .pcard img, .prod-card img {
+      filter: drop-shadow(0 16px 16px rgba(75,51,36,.14));
+    }
+    .pcard img, .prod-card img {
+      background: transparent;
+      padding: 24px;
+    }
+    .team-wrap { background: linear-gradient(180deg, var(--paper) 0, #efe0ca 100%); }
+    .team-grid { align-items: stretch; }
+    .tm-img { background: #d2b98f; }
+    .tm-info {
+      background: rgba(255,250,241,.9);
+      border-top: 2px solid rgba(75,51,36,.16);
+    }
+    .team-exp {
+      border-radius: 0;
+      margin-top: 28px;
+      padding: 30px 34px;
+      border-left: 6px solid var(--tan);
+    }
+    .m-row { margin-bottom: 14px; }
+    .m-lbl, .m-bar {
+      border-radius: 0;
+      min-height: 62px;
+    }
+    .m-lbl { border-left: 4px solid var(--tan); }
+    .ftr {
+      background: #080806;
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+    .ftr-logo img, .simple-ftr-logo img { width: 210px; }
+    @media (max-width: 980px) {
+      .wrap, main > .wrap:first-child, .hero-inner, .market-inner { width: min(100% - 32px, 1160px); }
+      .hdr-nav { background: var(--paper); }
+      .hdr-nav .cta, .hdr-nav .nav-cta { margin-left: 0; }
+      .landing-float, .looped-float { opacity: 1; }
+    }
+    @media (max-width: 620px) {
+      .section, .process, .videos, .equipment, .mkt-wrap, .biz-wrap, .team-wrap, .market-wrap, .ask-wrap { padding: 66px 0; }
+      .hero-stats .stat, .hero-stats .hs, .t-grid .tn, .tract-grid .tn { border-right: 0; border-bottom: 1px solid rgba(75,51,36,.14); }
+    }
+
   </style>
 </head>
 <body>
 
 <header class="hdr">
-  <a href="./index.html" class="hdr-logo" aria-label="NaturePacks by Looped Innovation"><img src="./assets/brand/naturepacks-by-looped.svg" alt="NaturePacks by Looped Innovation"></a>
+  <a href="./index.html" class="hdr-logo" aria-label="NaturePacks"><img src="./assets/brand/naturepacks-main.svg" alt="NaturePacks"></a>
   <nav class="hdr-nav" id="site-nav">
     <a href="./index.html">Home</a>
     <a href="./process.html">Process</a>
     <a href="./pitch.html" class="active">Pitch</a>
+    <a href="./founder.html">Founder</a>
     <a class="nav-cta" href="https://loopedinnovation.com.ng/" target="_blank" rel="noopener noreferrer">Visit Website</a>
   </nav>
   <button class="hdr-burger" aria-label="Menu" aria-expanded="false" aria-controls="site-nav">
@@ -544,7 +681,7 @@
           <div class="tm-info"><h4>Blessing Ekwere</h4><span>Founder / CEO</span></div>
         </div>
         <div class="tm techlead">
-          <div class="tm-img"><img src="./assets/technical_productlead.png" alt="Dave Olaniyan, Product Technical and Design Lead"></div>
+          <div class="tm-img"><img src="./assets/people/dave-olaniyan-field.jpg" alt="Dave Olaniyan, Product Technical and Design Lead"></div>
           <div class="tm-info"><h4>Dave Olaniyan</h4><span>Technical &amp; Product Lead</span></div>
         </div>
         <div class="tm">
