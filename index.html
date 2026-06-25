@@ -74,13 +74,13 @@
     .hero-chip { position: absolute; background: rgba(8,8,6,.82); color: white; border: 1px solid rgba(255,255,255,.16); padding: 10px 13px; border-radius: 5px; font-size: .78rem; font-weight: 900; backdrop-filter: blur(10px); }
     .hero-chip.tl { left: 14px; top: 14px; }
     .hero-chip.br { right: 14px; bottom: 14px; }
-    .landing-float { position: absolute; z-index: -1; pointer-events: none; opacity: .9; filter: drop-shadow(0 18px 22px rgba(75,51,36,.18)); animation: drift 7s ease-in-out infinite; }
-    .landing-float img { width: 100%; height: 100%; object-fit: contain; }
-    .landing-float.f1 { width: 78px; left: -10px; top: 12%; transform: rotate(-10deg); animation-delay: -.6s; }
-    .landing-float.f2 { width: 64px; left: 38%; top: 5%; transform: rotate(9deg); animation-delay: -2s; }
-    .landing-float.f3 { width: 86px; right: -18px; top: 13%; transform: rotate(8deg); animation-delay: -1.2s; }
-    .landing-float.f4 { width: 70px; right: 32%; bottom: 6%; transform: rotate(-7deg); animation-delay: -3s; }
-    .landing-float.f5 { width: 58px; left: 50%; bottom: 18%; transform: rotate(11deg); animation-delay: -4s; opacity: .78; }
+    .landing-float { position: absolute; z-index: 4; pointer-events: auto; opacity: .98; filter: drop-shadow(0 18px 22px rgba(75,51,36,.24)); animation: drift 7s ease-in-out infinite; cursor: grab; touch-action: none; user-select: none; }
+    .landing-float img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+    .landing-float.f1 { width: 110px; left: -10px; top: 12%; transform: rotate(-10deg); animation-delay: -.6s; }
+    .landing-float.f2 { width: 88px; left: 38%; top: 5%; transform: rotate(9deg); animation-delay: -2s; }
+    .landing-float.f3 { width: 108px; right: -18px; top: 13%; transform: rotate(8deg); animation-delay: -1.2s; }
+    .landing-float.f4 { width: 96px; right: 32%; bottom: 6%; transform: rotate(-7deg); animation-delay: -3s; }
+    .landing-float.f5 { width: 82px; left: 50%; bottom: 18%; transform: rotate(11deg); animation-delay: -4s; opacity: .78; }
     @keyframes drift {
       0%, 100% { translate: 0 0; }
       50% { translate: 0 -12px; }
@@ -97,6 +97,10 @@
     .band-stat, .tn { background: rgba(255,255,255,.06); padding: 24px; }
     .band-stat strong, .tn strong { display: block; color: white; font-size: clamp(1.45rem, 2.5vw, 2.3rem); font-weight: 950; line-height: 1; }
     .band-stat span, .tn span { color: rgba(255,255,255,.66); font-size: .82rem; font-weight: 750; }
+    .t-grid, .tract-grid { background: var(--line); }
+    .t-grid .tn, .tract-grid .tn { background: var(--paper2); }
+    .t-grid .tn strong, .tract-grid .tn strong { color: var(--brown); }
+    .t-grid .tn span, .tract-grid .tn span { color: var(--earth); }
     .prob-img, .mat-img, .prod-hero, .how-banner, .tract-img, .loopedstand-img, .prod-full, .pitch-img, .step-media, .process-media { border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); background: var(--paper2); }
     .prob-img img, .tract-img img, .loopedstand-img img { width: 100%; height: clamp(270px, 42vw, 500px); object-fit: cover; }
     .prob-img img { object-position: center 68%; }
@@ -148,6 +152,9 @@
     .m-bar { min-height: 54px; border-radius: 5px; display: flex; align-items: center; padding: 0 16px; color: white; font-weight: 900; background: var(--green); }
     .m-bar.sam { width: 72%; background: #7d5a3d; }
     .m-bar.som { width: 38%; background: #c8ab82; color: var(--ink); }
+    .nigeria-market { display: flex; align-items: center; gap: 12px; width: fit-content; margin-bottom: 20px; padding: 10px 13px; border-radius: 6px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16); color: white; font-weight: 950; }
+    .nigeria-market img { width: 46px; height: 30px; object-fit: cover; border-radius: 3px; box-shadow: 0 0 0 1px rgba(255,255,255,.25); }
+    .nigeria-market span { color: var(--tan); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; }
     .team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
     .tm { background: #efe0ca; border-radius: 8px; overflow: hidden; min-width: 0; box-shadow: 0 10px 32px rgba(42,26,14,.1); }
     .tm-img { height: 305px; display: grid; place-items: end center; overflow: hidden; background: linear-gradient(180deg, #d0b68c, #f4eadb); }
@@ -214,9 +221,9 @@
       .hero-visual { display: none; }
       .hero-mobile-visual { display: block; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow); background: var(--black); }
       .hero-mobile-visual img { width: 100%; height: min(70vw, 340px); object-fit: cover; object-position: center 24%; }
-      .landing-float { z-index: 0; opacity: .35; }
+      .landing-float { z-index: 4; opacity: .92; }
       .landing-float.f1 { width: 48px; left: auto; right: 8px; top: 80px; }
-      .landing-float.f2, .landing-float.f4 { display: none; }
+      .landing-float.f2, .landing-float.f4 { display: block; }
       .landing-float.f3 { width: 54px; right: 4px; top: 48%; }
       .landing-float.f5 { width: 44px; left: 4px; bottom: 120px; }
       .prob-cards, .val-grid, .adv-grid, .biz-grid, .prob-grid, .prod-grid, .prod-3, .eq-grid, .vid-grid, .ask-uses, .pitch-img-row { grid-template-columns: 1fr; }
@@ -512,7 +519,7 @@
         <h2>The Nigerian packaging market is worth &#8358;960 billion. We are going after it.</h2>
       </div>
       <div class="mkt-grid">
-        <div class="m-bars">
+        <div class="m-bars"><div class="nigeria-market"><img src="./assets/nigeria-flag.svg" alt="Nigeria flag"><div><span>Nigeria market</span><br>Packaging opportunity</div></div>
           <div class="m-row"><div class="m-lbl"><strong>&#8358;960B</strong><span>TAM</span></div><div class="m-bar tam">Total Addressable Market</div></div>
           <div class="m-row"><div class="m-lbl"><strong>&#8358;96B</strong><span>SAM</span></div><div class="m-bar sam">Serviceable Market</div></div>
           <div class="m-row"><div class="m-lbl"><strong>&#8358;96M</strong><span>SOM</span></div><div class="m-bar som">Initial Target</div></div>
@@ -623,7 +630,7 @@
   <div class="wrap">
     <div class="ftr-grid">
       <div class="ftr-brand">
-        <div class="ftr-logo"><img src="./assets/brand/naturepacks-white-color.svg" alt="NaturePacks"></div>
+        <div class="ftr-logo"><img src="./assets/brand/naturepacks-white-on-black.svg" alt="NaturePacks"></div>
         <p>Turning agricultural waste into strong, brand-ready packaging for businesses that want products protected and plastic waste reduced.</p>
       </div>
       <div class="ftr-col">
@@ -720,6 +727,25 @@
     },{threshold:.5});
     countEls.forEach(function(el){ countIO.observe(el); });
   })();
+
+  function makeLandingAssetsMovable(){
+    document.querySelectorAll('.landing-float').forEach(function(el){
+      var sx=0, sy=0, bx=0, by=0, dragging=false;
+      el.addEventListener('pointerdown', function(e){
+        dragging=true; sx=e.clientX; sy=e.clientY;
+        var old=(el.dataset.drag||'0,0').split(',').map(Number); bx=old[0]||0; by=old[1]||0;
+        el.setPointerCapture(e.pointerId); el.style.cursor='grabbing'; el.style.animationPlayState='paused';
+      });
+      el.addEventListener('pointermove', function(e){
+        if(!dragging) return;
+        var dx=bx+e.clientX-sx, dy=by+e.clientY-sy;
+        el.dataset.drag=dx+','+dy; el.style.translate=dx+'px '+dy+'px';
+      });
+      function end(){ dragging=false; el.style.cursor='grab'; el.style.animationPlayState='running'; }
+      el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
+    });
+  }
+  makeLandingAssetsMovable();
 </script>
 </body>
 </html>
