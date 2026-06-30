@@ -794,6 +794,53 @@
       color: var(--brown) !important;
     }
 
+
+/* asset loading polish */
+    img[data-loadfx],
+    video[data-loadfx] {
+      transition: filter .45s ease, opacity .45s ease, transform .45s ease;
+      will-change: filter, opacity;
+    }
+    img.asset-loading,
+    video.asset-loading {
+      opacity: .58;
+      filter: blur(12px) saturate(.88);
+      transform: scale(1.01);
+      background:
+        linear-gradient(90deg, rgba(255,250,241,.14), rgba(255,250,241,.38), rgba(255,250,241,.14)),
+        rgba(211,187,149,.18);
+      background-size: 220% 100%;
+      animation: assetLoadSweep 1.2s ease-in-out infinite;
+    }
+    img.asset-loaded,
+    video.asset-loaded {
+      opacity: 1;
+      filter: blur(0) saturate(1);
+      transform: none;
+      animation: none;
+      background: transparent;
+    }
+    .hdr-logo img.asset-loading,
+    .foot-brand img.asset-loading {
+      opacity: .72;
+      filter: blur(7px) saturate(.9);
+      transform: none;
+    }
+    @keyframes assetLoadSweep {
+      0% { background-position: 120% 0; }
+      100% { background-position: -120% 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      img[data-loadfx],
+      video[data-loadfx] {
+        transition: none;
+      }
+      img.asset-loading,
+      video.asset-loading {
+        animation: none;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -1212,5 +1259,40 @@
     }, { threshold: .5 });
     countEls.forEach(function(el){ countIO.observe(el); });
   })();</script>
+
+<script>
+  (() => {
+    const markLoaded = (el) => {
+      el.classList.remove('asset-loading');
+      el.classList.add('asset-loaded');
+    };
+    const prepare = (el) => {
+      if (el.dataset.loadfx === 'ready') return;
+      el.dataset.loadfx = 'ready';
+      el.classList.add('asset-loading');
+      if (el.tagName === 'IMG') {
+        if (el.complete && el.naturalWidth > 0) {
+          requestAnimationFrame(() => markLoaded(el));
+        } else {
+          el.addEventListener('load', () => markLoaded(el), { once: true });
+          el.addEventListener('error', () => markLoaded(el), { once: true });
+        }
+      } else if (el.tagName === 'VIDEO') {
+        if (el.readyState >= 2) {
+          requestAnimationFrame(() => markLoaded(el));
+        } else {
+          el.addEventListener('loadeddata', () => markLoaded(el), { once: true });
+          el.addEventListener('error', () => markLoaded(el), { once: true });
+        }
+      }
+    };
+    const boot = () => document.querySelectorAll('img, video').forEach(prepare);
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', boot, { once: true });
+    } else {
+      boot();
+    }
+  })();
+</script>
 </body>
 </html>
